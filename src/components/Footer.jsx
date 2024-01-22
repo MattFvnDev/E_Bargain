@@ -20,21 +20,21 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FaPinterestSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-gray-800 xl:h-[32px] xl:w-[32px] " />
+            <FaPinterestSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-red-800 xl:h-[32px] xl:w-[32px] " />
           </Link>
           <Link
             to="https://www.instagram.com/"
             target="_blank"
             rel="noreferrer"
           >
-            <FaInstagramSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-gray-800 xl:h-[32px] xl:w-[32px] " />
+            <FaInstagramSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-red-800 xl:h-[32px] xl:w-[32px] " />
           </Link>
           <Link
             to="https://www.facebook.com/?locale=pl_PL"
             target="_blank"
             rel="noreferrer"
           >
-            <FaFacebookSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-gray-800 xl:h-[32px] xl:w-[32px] " />
+            <FaFacebookSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-red-800 xl:h-[32px] xl:w-[32px] " />
           </Link>
         </div>
       </div>
