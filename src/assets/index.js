@@ -20,6 +20,9 @@ import OnePlus10T2 from "./smartphones/OnePlus/OnePlus10T/ONEPLUS 10T FB.webp"
 import OnePlus11 from "./smartphones/OnePlus/OnePlus11/ONEPLUS 11.webp"
 import OnePlus111 from "./smartphones/OnePlus/OnePlus11/ONEPLUS 11 B.webp"
 import OnePlus112 from "./smartphones/OnePlus/OnePlus11/ONEPLUS 11 FB.webp"
+import OnePlus12 from "./smartphones/OnePlus/OnePlus12/ONEPLUS 12.webp"
+import OnePlus121 from "./smartphones/OnePlus/OnePlus12/ONEPLUS 12 B.webp"
+import OnePlus122 from "./smartphones/OnePlus/OnePlus12/ONEPLUS 12 FB.webp"
 import OppoFindX5 from "./smartphones/Oppo/Find X5/OPPO Find X5.webp"
 import OppoFindX51 from "./smartphones/Oppo/Find X5/OPPO Find X5 B.webp"
 import OppoFindX52 from "./smartphones/Oppo/Find X5/OPPO Find X5 FB.webp"
@@ -68,6 +71,9 @@ export {
   OnePlus11,
   OnePlus111,
   OnePlus112,
+  OnePlus12,
+  OnePlus121,
+  OnePlus122,
   OppoFindX5,
   OppoFindX51,
   OppoFindX52,

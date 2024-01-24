@@ -1,6 +1,6 @@
 import Home from "./Home";
-import Phone from "./Phone";
+import PhoneDetails from "./PhoneDetails";
 import Products from "./Products";
 import Cart from "./Cart";
 
-export {Cart, Home, Phone, Products}
+export {Cart, Home, PhoneDetails, Products}

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Cart, Home, Products, Phone } from "./pages"
+import { Cart, Home, Products, PhoneDetails } from "./pages"
 import { AppLayout } from "./components"
 
 export function Router() {
@@ -10,7 +10,7 @@ export function Router() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
-          <Route path="products/phone/:id" element={<Phone />} />
+          <Route path="products/phone/:id" element={<PhoneDetails />} />
           <Route path="cart" element={<Cart/>} />
         </Route>
       </Routes>
