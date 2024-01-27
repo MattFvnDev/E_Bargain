@@ -17,10 +17,10 @@ const PhoneDetails = () => {
 
   return (
     <div className="container lg:max-w-screen-lg mx-auto py-12 px-6">
-      <div className="flex flex-col md:flex-row justify-between items-center space-y-48 md:space-y-0 ">
-        <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] md:mb-24 lg:mb-28">
+      <div className="flex flex-col md:flex-row justify-between items-center space-y-48 md:space-y-0 md:space-x-4 lg:space-x-16">
+        <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] md:mb-24 lg:mb-40">
           <img src={image} alt="" className="w-90 h-90" />
-          <div className="w-full flex justify-center items-center mt-12">
+          <div className="w-full flex justify-center items-center mt-16 lg:mt-20">
             <SmallImages
               changeImage={changeImage}
               phoneDetails={phoneDetails}
@@ -52,7 +52,7 @@ const PhoneDetails = () => {
               </button>
             </div>
           </div>
-          <button className="w-full mt-4 boder border-lime-500 py-2 px-6 bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white">
+          <button className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white">
             Add to cart
           </button>
         </div>

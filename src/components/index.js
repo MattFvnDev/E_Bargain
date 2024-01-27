@@ -7,6 +7,7 @@ import Rating from "./Rating"
 import PhoneCard from "./PhoneCard"
 import SmallImages from "./SmallImages"
 import TechSpecs from "./TechSpecs"
+import Newsletter from "./Newsletter"
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   Rating,
   SmallImages,
   TechSpecs,
+  Newsletter
 }

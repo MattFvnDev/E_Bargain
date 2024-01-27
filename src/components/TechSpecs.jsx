@@ -5,7 +5,7 @@ import { MdStorage, MdCameraRear, MdCameraFront } from "react-icons/md"
 
 const TechSpecs = ({ phoneDetails }) => {
   return (
-    <div className="mt-4 border-t pt-4 flex flex-col">
+    <div className="mt-4 border-t pt-4 flex flex-col space-y-2 lg:space-y-3">
       <p className="text-gray-500">Tech Specs:</p>
       <div className="flex flex-row items-center space-x-3">
         <MdStorage className="text-red-700 w-5 h-5 flex-shrink-0" />
