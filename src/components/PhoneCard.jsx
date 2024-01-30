@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Rating } from "../components"
 
-const PhoneCard = ({id, img, brand, model, price, rating, ratingLeft}) => {
+const PhoneCard = ({ id, img, brand, model, price, rating, ratingLeft }) => {
   return (
     <Link
       onClick={() => window.top(0.0)}
       to={`/products/phone/${id}`}
-      className="border-2 rounded-md group overflow-hidden hover:border-gray-500"
+      className="border-2 rounded-md group overflow-hidden hover:border-gray-500 duration-300 ease-in"
     >
       <div className="relative w-full">
         <img
@@ -26,7 +26,7 @@ const PhoneCard = ({id, img, brand, model, price, rating, ratingLeft}) => {
             <p className="text-gray-600">Price</p>
             <p className="text-lg font-semibold">${price}.00</p>
           </div>
-          <button className="border rounded-lg py-1 px-4 font-semibold hover:bg-lime-500 hover:border-lime-500 focus:ring-4 focus: ring-opacity-50 focus:ring-lime-500 hover:text-white">
+          <button className="border rounded-lg py-1 px-4 font-semibold hover:bg-lime-500 hover:border-lime-500 focus:ring-4 focus: ring-opacity-50 focus:ring-lime-500 hover:text-white duration-300 ease-in-out">
             Add to Cart
           </button>
         </div>
