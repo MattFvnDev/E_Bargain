@@ -47,6 +47,10 @@ import Xiaomi13T2 from "./smartphones/Xiaomi/Xiaomi 13/Xiaomi 13T FB.webp"
 import XiaomiPoco from "./smartphones/Xiaomi/Xiaomi Poco F4 GT/Xiaomi POCO.webp"
 import XiaomiPoco1 from "./smartphones/Xiaomi/Xiaomi Poco F4 GT/Xiaomi POCO B.webp"
 import XiaomiPoco2 from "./smartphones/Xiaomi/Xiaomi Poco F4 GT/Xiaomi POCO FB.webp"
+import Xiaomi from "./hero/Xiaomi.webp"
+import OnePlus from "./hero/OnePlus.webp"
+import Samsung from "./hero/Samsung.webp"
+import Apple from "./hero/Apple.webp"
 
 export {
   logo,
@@ -98,4 +102,8 @@ export {
   XiaomiPoco,
   XiaomiPoco1,
   XiaomiPoco2,
+  Xiaomi,
+  Samsung,
+  OnePlus,
+  Apple,
 }

@@ -8,6 +8,7 @@ import PhoneCard from "./PhoneCard"
 import SmallImages from "./SmallImages"
 import TechSpecs from "./TechSpecs"
 import Newsletter from "./Newsletter"
+import Hero from "./Hero"
 
 export {
   Header,
@@ -19,5 +20,6 @@ export {
   Rating,
   SmallImages,
   TechSpecs,
-  Newsletter
+  Newsletter,
+  Hero
 }
