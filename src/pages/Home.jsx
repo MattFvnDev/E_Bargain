@@ -1,10 +1,16 @@
-import React from 'react'
-import { Hero } from '../components'
+import React from "react"
+import { Banner, Hero } from "../components"
+import { Phone } from "../assets"
 
 const Home = () => {
   return (
     <div>
-    <Hero/>
+      <Hero />
+      <Banner
+        title="High quality devices"
+        text="Bargain E-Commerce provides the best products at affordable prices directly from manufacturers."
+        img={Phone}
+      />
     </div>
   )
 }

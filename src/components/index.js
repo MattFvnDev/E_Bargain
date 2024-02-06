@@ -9,6 +9,7 @@ import SmallImages from "./SmallImages"
 import TechSpecs from "./TechSpecs"
 import Newsletter from "./Newsletter"
 import Hero from "./Hero"
+import Banner from "./Banner"
 
 export {
   Header,
@@ -21,5 +22,6 @@ export {
   SmallImages,
   TechSpecs,
   Newsletter,
-  Hero
+  Hero,
+  Banner
 }
