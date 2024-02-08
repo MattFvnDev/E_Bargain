@@ -10,6 +10,7 @@ import TechSpecs from "./TechSpecs"
 import Newsletter from "./Newsletter"
 import Hero from "./Hero"
 import Banner from "./Banner"
+import BannerReverse from "./BannerReverse"
 
 export {
   Header,
@@ -23,5 +24,6 @@ export {
   TechSpecs,
   Newsletter,
   Hero,
-  Banner
+  Banner,
+  BannerReverse,
 }

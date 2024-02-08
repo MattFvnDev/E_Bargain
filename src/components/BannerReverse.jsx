@@ -1,11 +1,18 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const Banner = ({ title, text, img }) => {
+const BannerReverse = ({ title, text, img }) => {
   return (
     <section className="pb-40">
       <div className="max-w-screen-lg lg:max-w-screen-2xl mx-auto px-6">
         <div className="flex h-[40rem] justify-between overflow-hidden">
+          <div className="hidden sm:flex sm:w-1/2 bg-gray-300">
+            <img
+              src={img}
+              alt="Banner"
+              className="h-full w-full object-cover rounded-tr-xl rounded-br-xl"
+            />
+          </div>
           <div className="w-full px-8 justify-center flex flex-col text-start sm:w-1/2 bg-gray-300">
             <div className="w-full text-start justify-center flex flex-col">
               <h2 className="text-3xl font-semibold mb-8">{title}</h2>
@@ -17,17 +24,10 @@ const Banner = ({ title, text, img }) => {
               </Link>
             </div>
           </div>
-          <div className="hidden sm:flex sm:w-1/2 bg-gray-300">
-            <img
-              src={img}
-              alt="Banner"
-              className="h-full w-full object-cover rounded-tl-lg rounded-bl-lg"
-            />
-          </div>
         </div>
       </div>
     </section>
   )
 }
 
-export default Banner
+export default BannerReverse

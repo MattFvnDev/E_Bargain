@@ -10,7 +10,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <footer className="border-t border-gray-100 p-6 text-center container mx-auto">
-      <div className="flex flex-col-reverse items-center justify-center space-x-4 sm:flex-row sm:justify-between">
+      <div className="flex flex-col-reverse items-center justify-center sm:flex-row sm:justify-between">
         <p className="text-sm font-medium text-gray-500 xl:text-lg">
           &copy; {new Date().getFullYear()} Bargain. All rights reserved.
         </p>

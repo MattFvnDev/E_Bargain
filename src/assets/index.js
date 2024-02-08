@@ -52,6 +52,7 @@ import OnePlus from "./hero/OnePlus.webp"
 import Samsung from "./hero/Samsung.webp"
 import Apple from "./hero/Apple.webp"
 import Phone from "./banner/Phone1.webp"
+import Phone2 from "./banner/Phone2.webp"
 
 export {
   logo,
@@ -108,4 +109,5 @@ export {
   OnePlus,
   Apple,
   Phone,
+  Phone2
 }
