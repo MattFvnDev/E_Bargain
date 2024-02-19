@@ -11,6 +11,9 @@ import Newsletter from "./Newsletter"
 import Hero from "./Hero"
 import Banner from "./Banner"
 import BannerReverse from "./BannerReverse"
+import BestProducts from "./BestProducts"
+import Product from "./Product"
+
 
 export {
   Header,
@@ -26,4 +29,7 @@ export {
   Hero,
   Banner,
   BannerReverse,
+  BestProducts,
+  Product,
+  
 }
