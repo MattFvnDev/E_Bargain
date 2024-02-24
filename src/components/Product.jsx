@@ -8,7 +8,7 @@ const Product = ({ id, otherImgs, brand, model, price }) => {
         <div className="p-4 w-full">
           <img
             src={otherImgs[0]}
-            alt={`An Image of ${model}`}
+            alt={`An Image of ${brand} ${model}`}
             className="object-contain"
           />
         </div>
