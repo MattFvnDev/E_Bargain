@@ -1,5 +1,5 @@
 import React from "react"
-import { Banner, Hero, BannerReverse, BestProducts } from "../components"
+import { Banner, Hero, BannerReverse, BestProducts, TrendingSlider } from "../components"
 import { Phone, Phone2 } from "../assets"
 
 const Home = () => {
@@ -12,6 +12,7 @@ const Home = () => {
         text="Bargain E-Commerce provides the best products at affordable prices directly from manufacturers."
         img={Phone}
       />
+      <TrendingSlider/>
       <BannerReverse
         title="High quality devices"
         text="Bargain E-Commerce provides the best products at affordable prices directly from manufacturers."

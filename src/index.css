@@ -5,3 +5,12 @@
 a.active {
   color: #991b1b;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-ms-overflow-style {
+  display: none;
+  scrollbar-width: none;
+}

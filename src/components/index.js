@@ -13,7 +13,8 @@ import Banner from "./Banner"
 import BannerReverse from "./BannerReverse"
 import BestProducts from "./BestProducts"
 import Product from "./Product"
-
+import TrendingSlider from "./TrendingSlider"
+import TrendingPhone from "./TrendingPhone"
 
 export {
   Header,
@@ -31,5 +32,6 @@ export {
   BannerReverse,
   BestProducts,
   Product,
-  
+  TrendingSlider,
+  TrendingPhone,
 }
