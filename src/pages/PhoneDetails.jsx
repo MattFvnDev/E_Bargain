@@ -9,7 +9,7 @@ const PhoneDetails = () => {
   const phoneDetails = smartPhones.filter(
     (phoneDetails) => phoneDetails.id === parseInt(id)
   )
-
+  const [count, setCount] = useState(1)
   const [image, setImage] = useState(phoneDetails[0].img)
   const changeImage = (e) => {
     setImage(e.target.src)
@@ -43,11 +43,18 @@ const PhoneDetails = () => {
           <div className="mt-4 border-t pt-4">
             <p className="text-gray-500">Quantity:</p>
             <div className="mt-2 flex items-center space-x-3">
-              <button className="p-1 rounded-md hover:bg-red-100 hover:text-red-500">
+              <button
+                disabled={count <= 1}
+                onClick={() => setCount(count - 1)}
+                className="p-1 rounded-md hover:bg-red-100 hover:text-red-500"
+              >
                 <FaMinus className="w-6 h-6 flex-shrink-0" />
               </button>
-              <p className="font-semibold text-xl">0</p>
-              <button className="p-1 rounded-md hover:bg-green-100 hover:text-green-500">
+              <p className="font-semibold text-xl">{count}</p>
+              <button
+                onClick={() => setCount(count + 1)}
+                className="p-1 rounded-md hover:bg-green-100 hover:text-green-500"
+              >
                 <FaPlus className="w-6 h-6 flex-shrink-0" />
               </button>
             </div>
