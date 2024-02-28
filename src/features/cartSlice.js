@@ -3,7 +3,7 @@ import { smartPhones } from "../constants"
 
 const initialState = {
   cart: [],
-  products: smartPhones,
+  smartPhones: smartPhones,
   quantity: 0,
   total: 0,
 }
