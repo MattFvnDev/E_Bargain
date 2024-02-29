@@ -16,22 +16,22 @@ const Product = ({ filteredSmartPhone }) => {
             className="object-contain"
           />
         </div>
-        <div className="flex items-center bg-white justify-between p-4 ">
-          <div className="">
-            <p className="text-lg text-lime-600 font-semibold">
-              {filteredSmartPhone.brand} {filteredSmartPhone.model}
-            </p>
-            <p className="mt-1 text-xl font-semibold text-red-800">
-              ${filteredSmartPhone.price}.00
-            </p>
-          </div>
-          <div className="flex gap-2 self-end">
-            <button className="text-yellow-500 hover:text-red-800 ">
-              <BsFillCartPlusFill className="w-7 h-7" />
-            </button>
-          </div>
-        </div>
       </Link>
+      <div className="flex items-center bg-white justify-between p-4 ">
+        <div className="">
+          <p className="text-lg text-lime-600 font-semibold">
+            {filteredSmartPhone.brand} {filteredSmartPhone.model}
+          </p>
+          <p className="mt-1 text-xl font-semibold text-red-800">
+            ${filteredSmartPhone.price}.00
+          </p>
+        </div>
+        <div className="flex gap-2 self-end">
+          <button className="text-yellow-500 hover:text-red-800 ">
+            <BsFillCartPlusFill className="w-7 h-7" />
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
