@@ -1,8 +1,11 @@
 import React from "react"
 import { BsFillCartPlusFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
+import { addToCart } from "../features/cartSlice"
+import { useDispatch } from "react-redux"
 
 const Product = ({ filteredSmartPhone }) => {
+  const dispatch = useDispatch()
   return (
     <div className="border-2 hover:border-gray-500 duration-300 ease-in-out">
       <Link
@@ -27,8 +30,10 @@ const Product = ({ filteredSmartPhone }) => {
           </p>
         </div>
         <div className="flex gap-2 self-end">
-          <button className="text-yellow-500 hover:text-red-800 ">
-            <BsFillCartPlusFill className="w-7 h-7" />
+          <button 
+          onClick={()=> dispatch(addToCart(filteredSmartPhone))}
+          className="text-yellow-500 hover:text-red-800 ">
+            <BsFillCartPlusFill className="w-8 h-8" />
           </button>
         </div>
       </div>
