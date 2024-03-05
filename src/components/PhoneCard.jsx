@@ -29,7 +29,7 @@ const PhoneCard = ({ phone }) => {
           </div>
           <button
             onClick={() => dispatch(addToCart(phone))}
-            className="bg-lime-500 border rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white"
+            className="bg-lime-500 border mt-2 rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white"
           >
             Add To Cart
           </button>
