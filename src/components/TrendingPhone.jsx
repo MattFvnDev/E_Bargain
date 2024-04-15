@@ -20,7 +20,9 @@ const TrendingPhone = ({ id, img, brand, model, price }) => {
           <p className="text-red-800 font-medium text-lg">
             {brand} {model}
           </p>
-          <p className="mt-1 text-2xl font-semibold text-black">${price}.00</p>
+          <p className="mt-1 text-2xl font-semibold text-black">
+            ${price.toFixed(2)}
+          </p>
         </div>
       </Link>
     </>

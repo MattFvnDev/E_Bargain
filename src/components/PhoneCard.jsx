@@ -25,7 +25,7 @@ const PhoneCard = ({ phone }) => {
         <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
             <p className="text-gray-600">Price</p>
-            <p className="text-lg font-semibold">${phone.price}.00</p>
+            <p className="text-lg font-semibold">${phone.price.toFixed(2)}</p>
           </div>
           <button
             onClick={() => dispatch(addToCart(phone))}

@@ -26,7 +26,7 @@ const Product = ({ filteredSmartPhone }) => {
             {filteredSmartPhone.brand} {filteredSmartPhone.model}
           </p>
           <p className="mt-1 text-xl font-semibold text-red-800">
-            ${filteredSmartPhone.price}.00
+            ${filteredSmartPhone.price.toFixed(2)}
           </p>
         </div>
         <div className="flex gap-2 self-end">

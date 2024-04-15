@@ -38,7 +38,7 @@ const PhoneDetails = () => {
           <TechSpecs phoneDetails={phoneDetails} />
           <div className="mt-4 border-t pt-4">
             <p className="text-gray-500">Price:</p>
-            <p className="text-xl font-semibold">${phoneDetails[0].price}.00</p>
+            <p className="text-xl font-semibold">${phoneDetails[0].price.toFixed(2)}</p>
           </div>
           <div className="mt-4 border-t pt-4">
             <p className="text-gray-500">Quantity:</p>
