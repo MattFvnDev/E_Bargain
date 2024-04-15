@@ -4,7 +4,7 @@ import { HiMiniShoppingCart } from "react-icons/hi2"
 import { BsBoxes } from "react-icons/bs"
 
 const Navbar = () => (
-  <div className="flex flex-row space-x-4 md:space-x-6">
+  <nav className="flex flex-row space-x-4 md:space-x-6">
     <NavLink
       className="flex items-center text-gray-600 hover:text-red-800 group"
       to="products"
@@ -25,7 +25,7 @@ const Navbar = () => (
         $0.00 <span className="text-sm text-gray-500">(0)</span>
       </p>
     </NavLink>
-  </div>
+  </nav>
 )
 
 export default Navbar
