@@ -13,7 +13,7 @@ const CartItem = () => {
           <div className="shrink-0">
             <img
               src={item.img}
-              alt=""
+              alt={`An image of ${item.brand} ${item.model} `}
               className="rounded-md object-cover object-center h-24 w-24 sm:h-36 sm:w-36"
             />
           </div>

@@ -1,7 +1,9 @@
 import React from "react"
+import { useSelector } from "react-redux"
+import { EmptyCart, CartItem } from "../components"
 
 const Cart = () => {
-  
+  const cart = useSelector((state) => state.products.cart)
   return (
     <div>
       <main className="mx-auto max-w-xl md:max-w-2xl px-6 pb-16 pt-16 lg:max-w-5xl xl:max-w-7xl lg:px-8">
@@ -13,7 +15,7 @@ const Cart = () => {
         >
           <section className="lg:col-span-7">
             <h2 className="sr-only">Products in your shopping cart</h2>
-            
+            {cart <= 0 ? <EmptyCart /> : <CartItem />}
           </section>
 
           <section className="mt-16 rounded-lg border-2 border-gray-300 bg-gray-50 px-4 py-6 shadow-md sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
