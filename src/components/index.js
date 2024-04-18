@@ -15,6 +15,7 @@ import BestProducts from "./BestProducts"
 import Product from "./Product"
 import TrendingSlider from "./TrendingSlider"
 import TrendingPhone from "./TrendingPhone"
+import EmptyCart from "./EmptyCart"
 
 export {
   Header,
@@ -34,4 +35,5 @@ export {
   Product,
   TrendingSlider,
   TrendingPhone,
+  EmptyCart
 }
