@@ -66,6 +66,7 @@ export const smartPhones = [
     cameraFront: "12MP Front",
     rating: 5,
     ratingLeft: 0,
+    quantity: 1,
   },
   {
     id: 2,
@@ -83,6 +84,7 @@ export const smartPhones = [
     cameraFront: "12MP Front",
     rating: 4,
     ratingLeft: 1,
+    quantity: 1,
   },
   {
     id: 3,
@@ -100,6 +102,7 @@ export const smartPhones = [
     cameraFront: "13MP Front",
     rating: 4,
     ratingLeft: 1,
+    quantity: 1,
   },
   {
     id: 4,
@@ -117,6 +120,7 @@ export const smartPhones = [
     cameraFront: "8MP Front",
     rating: 4,
     ratingLeft: 1,
+    quantity: 1,
   },
   {
     id: 5,
@@ -134,6 +138,7 @@ export const smartPhones = [
     cameraFront: "13MP Front",
     rating: 5,
     ratingLeft: 0,
+    quantity: 1,
   },
   {
     id: 6,
@@ -151,6 +156,7 @@ export const smartPhones = [
     cameraFront: "16MP Front",
     rating: 3,
     ratingLeft: 2,
+    quantity: 1,
   },
   {
     id: 7,
@@ -168,6 +174,7 @@ export const smartPhones = [
     cameraFront: "16MP Front ",
     rating: 4,
     ratingLeft: 1,
+    quantity: 1,
   },
   {
     id: 8,
@@ -185,6 +192,7 @@ export const smartPhones = [
     cameraFront: "32MP Front ",
     rating: 5,
     ratingLeft: 0,
+    quantity: 1,
   },
   {
     id: 9,
@@ -202,6 +210,7 @@ export const smartPhones = [
     cameraFront: "32MP Front",
     rating: 4,
     ratingLeft: 1,
+    quantity: 1,
   },
   {
     id: 10,
@@ -219,6 +228,7 @@ export const smartPhones = [
     cameraFront: "32MP Front",
     rating: 3,
     ratingLeft: 2,
+    quantity: 1,
   },
   {
     id: 11,
@@ -236,6 +246,7 @@ export const smartPhones = [
     cameraFront: "10MP Front",
     rating: 3,
     ratingLeft: 2,
+    quantity: 1,
   },
   {
     id: 12,
@@ -253,6 +264,7 @@ export const smartPhones = [
     cameraFront: "12MP Front",
     rating: 4,
     ratingLeft: 1,
+    quantity: 1,
   },
   {
     id: 13,
@@ -270,6 +282,7 @@ export const smartPhones = [
     cameraFront: "12MP Front",
     rating: 5,
     ratingLeft: 0,
+    quantity: 1,
   },
   {
     id: 14,
@@ -287,6 +300,7 @@ export const smartPhones = [
     cameraFront: "20MP Front",
     rating: 5,
     ratingLeft: 0,
+    quantity: 1,
   },
   {
     id: 15,
@@ -304,6 +318,7 @@ export const smartPhones = [
     cameraFront: "32MP Front",
     rating: 3,
     ratingLeft: 2,
+    quantity: 1,
   },
   {
     id: 16,
@@ -321,5 +336,6 @@ export const smartPhones = [
     cameraFront: "20MP Front",
     rating: 4,
     ratingLeft: 1,
+    quantity: 1,
   },
 ]
