@@ -3,12 +3,13 @@ import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { HiOutlineTruck } from "react-icons/hi2"
 import { RxCross1 } from "react-icons/rx"
+import { FaMinus, FaPlus } from "react-icons/fa"
 
 const CartItem = () => {
-  const itemInCart = useSelector((state) => state.products.cart)
+  const {cart} = useSelector((state) => state.products)
   return (
     <ul className="divide-y divide-gray-300 border-y border-gray-300">
-      {itemInCart.map((item, id) => (
+      {cart?.map((item, id) => (
         <li className="flex py-6 sm:py-10" key={id}>
           <div className="shrink-0">
             <img
@@ -34,24 +35,29 @@ const CartItem = () => {
                   Storage:
                   <strong> {item.memoryCapacity} GB</strong>
                 </p>
+                <div className="mt-2 sm:mt-6">
+                  <p className="text-gray-500">Quantity:</p>
+                  <div className="mt-2 flex items-center space-x-2">
+                    <button className="p-1 rounded-md hover:bg-red-100 hover:text-red-500">
+                      <FaMinus className="w-6 h-6 flex-shrink-0" />
+                    </button>
+                    <p className="font-semibold text-xl">{item.quantity}</p>
+                    <button className="p-1 rounded-md hover:bg-green-100 hover:text-green-500">
+                      <FaPlus className="w-6 h-6 flex-shrink-0" />
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="mt-4 sm:mt-0 sm:pr-9">
-                <label htmlFor="quantity-1" className="sr-only"></label>
-                <input
-                  type="number"
-                  min={1}
-                  max={10}
-                  className="flex h-10 rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-16"
-                />
-                <div className="absolute right-0 top-0">
-                  <button className="items-center justify-center rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background h-10 -mr-2 inline-flex p-2">
+              <div className="mt-4 sm:mt-0 sm:pr-10">
+                <div className="absolute right-1 top-0">
+                  <button className="items-center justify-center rounded-md font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background h-10 -mr-2 inline-flex p-2 hover:bg-gray-500 hover:text-white">
                     <span className="sr-only">Remove</span>
-                    <RxCross1 className="h-5 w-5" />
+                    <RxCross1 className="h-6 w-6" />
                   </button>
                 </div>
               </div>
             </div>
-            <p className="mt-4 flex space-x-2 text-sm">
+            <p className="mt-2 flex space-x-2 text-sm">
               <HiOutlineTruck className="h-5 w-5 shrink-0" />
               <span>Ships in 1 week</span>
             </p>
