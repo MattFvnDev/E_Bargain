@@ -1,13 +1,27 @@
 import React from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { EmptyCart, CartItem } from "../components"
+import { clearCart } from "../features/cartSlice"
 
 const Cart = () => {
-  const cart = useSelector((state) => state.products.cart)
+  const {cart} = useSelector((state) => state.products)
+  const dispatch = useDispatch()
   return (
     <div>
       <main className="mx-auto max-w-xl md:max-w-2xl px-6 pb-16 pt-16 lg:max-w-5xl xl:max-w-7xl lg:px-8">
         <h1 className="font-semibold text-4xl xl:text-3xl">Shopping Cart</h1>
+        {cart.length > 0 && (
+          <button
+            onClick={() => dispatch(clearCart(cart))}
+            type="button"
+            className=" mt-2 shrink-0"
+          >
+            <span className="italic text-2xl xl:text-xl hover:text-red-800">
+              (Clear cart)
+            </span>
+          </button>
+        )}
+
         <form
           value=""
           action=""
