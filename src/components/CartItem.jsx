@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { HiOutlineTruck } from "react-icons/hi2"
@@ -8,11 +8,16 @@ import {
   removeFromCart,
   decreaseQuantity,
   increaseQuantity,
+  cartTotal,
 } from "../features/cartSlice"
 
 const CartItem = () => {
   const { cart } = useSelector((state) => state.products)
   const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(cartTotal())
+  }, [cart, dispatch])
+
   return (
     <ul className="divide-y divide-gray-300 border-y border-gray-300">
       {cart?.map((item, id) => (
