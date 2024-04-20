@@ -37,12 +37,15 @@ const CartItem = () => {
                     </Link>
                   </h3>
                 </div>
-                <p className="mt-1 text-sm font-bold md:text-base">
+                <p className="mt-1 text-sm font-bold md:text-base text-yellow-500">
                   ${item.price.toFixed(2)}&nbsp;
                 </p>
-                <p className="mt-1 text-sm font-medium md:text-base">
+                <p className="mt-1 text-sm font-medium md:text-base ">
                   Storage:
-                  <strong> {item.memoryCapacity} GB</strong>
+                  <strong className="text-lime-600">
+                    {" "}
+                    {item.memoryCapacity} GB
+                  </strong>
                 </p>
                 <div className="mt-2 sm:mt-3">
                   <p className="text-gray-500">Quantity:</p>
