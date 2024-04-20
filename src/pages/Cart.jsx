@@ -4,7 +4,7 @@ import { EmptyCart, CartItem } from "../components"
 import { clearCart } from "../features/cartSlice"
 
 const Cart = () => {
-  const {cart} = useSelector((state) => state.products)
+  const { cart } = useSelector((state) => state.products)
   const dispatch = useDispatch()
   return (
     <div>
@@ -14,7 +14,7 @@ const Cart = () => {
           <button
             onClick={() => dispatch(clearCart(cart))}
             type="button"
-            className=" mt-2 shrink-0"
+            className="mt-1 shrink-0"
           >
             <span className="italic text-2xl xl:text-xl hover:text-red-800">
               (Clear cart)
