@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { HiOutlineTruck } from "react-icons/hi2"
 import { RxCross1 } from "react-icons/rx"
 import { FaMinus, FaPlus } from "react-icons/fa"
+import { removeFromCart } from "../features/cartSlice"
 
 const CartItem = () => {
-  const {cart} = useSelector((state) => state.products)
+  const { cart } = useSelector((state) => state.products)
+  const dispatch = useDispatch()
   return (
     <ul className="divide-y divide-gray-300 border-y border-gray-300">
       {cart?.map((item, id) => (
@@ -35,7 +37,7 @@ const CartItem = () => {
                   Storage:
                   <strong> {item.memoryCapacity} GB</strong>
                 </p>
-                <div className="mt-2 sm:mt-6">
+                <div className="mt-2 sm:mt-3">
                   <p className="text-gray-500">Quantity:</p>
                   <div className="mt-2 flex items-center space-x-2">
                     <button className="p-1 rounded-md hover:bg-red-100 hover:text-red-500">
@@ -50,9 +52,13 @@ const CartItem = () => {
               </div>
               <div className="mt-4 sm:mt-0 sm:pr-10">
                 <div className="absolute right-1 top-0">
-                  <button className="items-center justify-center rounded-md font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background h-10 -mr-2 inline-flex p-2 hover:bg-gray-500 hover:text-white">
+                  <button
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    type="button"
+                    className="items-center justify-center rounded-md font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background h-10 -mr-2 inline-flex p-2 hover:bg-gray-500 hover:text-white"
+                  >
                     <span className="sr-only">Remove</span>
-                    <RxCross1 className="h-6 w-6" />
+                    <RxCross1 className="h-5 w-5 sm:h-6 sm:w-6" />
                   </button>
                 </div>
               </div>
