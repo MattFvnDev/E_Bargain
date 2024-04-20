@@ -4,7 +4,11 @@ import { useSelector, useDispatch } from "react-redux"
 import { HiOutlineTruck } from "react-icons/hi2"
 import { RxCross1 } from "react-icons/rx"
 import { FaMinus, FaPlus } from "react-icons/fa"
-import { removeFromCart, decreaseQuantity, increaseQuantity } from "../features/cartSlice"
+import {
+  removeFromCart,
+  decreaseQuantity,
+  increaseQuantity,
+} from "../features/cartSlice"
 
 const CartItem = () => {
   const { cart } = useSelector((state) => state.products)
@@ -25,7 +29,10 @@ const CartItem = () => {
               <div>
                 <div className="flex justify-between">
                   <h3 className="text-sm md:text-lg">
-                    <Link to={`/products/phone/${id}`} className="font-medium">
+                    <Link
+                      to={`/products/phone/${item.id}`}
+                      className="font-medium"
+                    >
                       {item.brand} {item.model}
                     </Link>
                   </h3>
@@ -41,17 +48,19 @@ const CartItem = () => {
                   <p className="text-gray-500">Quantity:</p>
                   <div className="mt-2 flex items-center space-x-2">
                     <button
-                    disabled={item.quantity <= 1} 
-                    onClick={() => dispatch(decreaseQuantity(item.id))}
-                    type="button"
-                    className="p-1 rounded-md hover:bg-red-100 hover:text-red-500">
+                      disabled={item.quantity <= 1}
+                      onClick={() => dispatch(decreaseQuantity(item.id))}
+                      type="button"
+                      className="p-1 rounded-md hover:bg-red-100 hover:text-red-500"
+                    >
                       <FaMinus className="w-6 h-6 flex-shrink-0" />
                     </button>
                     <p className="font-semibold text-xl">{item.quantity}</p>
                     <button
-                    onClick={() => dispatch(increaseQuantity(item.id))}
-                    type="button" 
-                    className="p-1 rounded-md hover:bg-green-100 hover:text-green-500">
+                      onClick={() => dispatch(increaseQuantity(item.id))}
+                      type="button"
+                      className="p-1 rounded-md hover:bg-green-100 hover:text-green-500"
+                    >
                       <FaPlus className="w-6 h-6 flex-shrink-0" />
                     </button>
                   </div>
