@@ -5,7 +5,8 @@ const initialState = {
   cart: [],
   smartPhones: smartPhones,
   quantity: 0,
-  total: 0,
+  price: 0,
+  shippingEstimate:25,
 }
 
 const cartSlice = createSlice({
@@ -45,6 +46,23 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.cart = []
     },
+    cartTotal: (state) => {
+      let { quantity, price } = state.cart.reduce(
+        (cartTotal, cartItem) => {
+          const { price, quantity } = cartItem
+          const itemTotal = price * quantity
+          cartTotal.price += itemTotal
+          cartTotal.quantity += quantity
+          return cartTotal
+        },
+        {
+          price: 0,
+          quantity: 0,
+        }
+      )
+      state.price = parseInt(price)
+      state.quantity = quantity
+    },
   },
 })
 
@@ -54,6 +72,7 @@ export const {
   decreaseQuantity,
   increaseQuantity,
   clearCart,
+  cartTotal,
 } = cartSlice.actions
 
 export default cartSlice.reducer
