@@ -16,7 +16,7 @@ const Cart = () => {
     <div>
       <main className="mx-auto max-w-xl md:max-w-2xl px-6 pb-16 pt-16 lg:max-w-5xl xl:max-w-7xl lg:px-8">
         <h1 className="font-semibold text-4xl xl:text-3xl">Shopping Cart</h1>
-        {cart.length > 0 && (
+        {cart.length > 0 ? (
           <button
             onClick={() => dispatch(clearCart(cart))}
             type="button"
@@ -26,7 +26,7 @@ const Cart = () => {
               (Clear cart)
             </span>
           </button>
-        )}
+        ) : null}
         <form
           value=""
           action=""
@@ -67,9 +67,10 @@ const Cart = () => {
               </div>
             </dl>
             <div className="mt-6">
-              <button 
-              disabled={cart <= 0}
-              className="text-white inline-flex items-center justify-center rounded-md text-md font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 py-2 px-4 w-full bg-gray-700 hover:bg-red-800 ease-in-out duration-300 disabled:bg-gray-700/70">
+              <button
+                disabled={cart <= 0}
+                className="text-white inline-flex items-center justify-center rounded-md text-md font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 py-2 px-4 w-full bg-gray-700 hover:bg-red-800 ease-in-out duration-300 disabled:bg-gray-700/70"
+              >
                 Checkout
               </button>
             </div>
