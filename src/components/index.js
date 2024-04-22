@@ -17,6 +17,7 @@ import TrendingSlider from "./TrendingSlider"
 import TrendingPhone from "./TrendingPhone"
 import EmptyCart from "./EmptyCart"
 import CartItem from "./CartItem"
+import Details from "./Details"
 
 export {
   Header,
@@ -37,5 +38,6 @@ export {
   TrendingSlider,
   TrendingPhone,
   EmptyCart,
-  CartItem
+  CartItem,
+  Details
 }

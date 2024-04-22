@@ -1,27 +1,34 @@
-import { React } from "react"
+import React, { useState } from "react"
 
-const SmallImages = ({ changeImage, phoneDetail }) => {
+const SmallImages = ({ img, otherImgs, model }) => {
+  const [image, setImage] = useState(img)
+  const changeImage = (e) => {
+    setImage(e.target.src)
+  }
   return (
-    <>
-      <img
-        onMouseOver={changeImage}
-        src={phoneDetail[0].img}
-        alt=""
-        className="w-24 h-24 lg:w-28 lg:h-28 object-cover cursor-pointer"
-      />
-      <img
-        onMouseOver={changeImage}
-        src={phoneDetail[0].otherImgs[0]}
-        alt=""
-        className="w-24 h-24 lg:w-28 lg:h-28 object-cover cursor-pointer"
-      />
-      <img
-        onMouseOver={changeImage}
-        src={phoneDetail[0].otherImgs[1]}
-        alt=""
-        className="w-24 h-24 lg:w-28 lg:h-28 object-cover cursor-pointer"
-      />
-    </>
+    <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] md:mb-24 lg:mb-40">
+      <img src={image} alt={`An Image of ${model}`} className="w-90 h-90" />
+      <div className="w-full flex justify-center items-center mt-16 lg:mt-20">
+        <img
+          onMouseOver={changeImage}
+          src={img}
+          alt={`An Image of ${model}`}
+          className="w-24 h-24 lg:w-28 lg:h-28 object-cover cursor-pointer"
+        />
+        <img
+          onMouseOver={changeImage}
+          src={otherImgs[0]}
+          alt={`An Image of ${model}`}
+          className="w-24 h-24 lg:w-28 lg:h-28 object-cover cursor-pointer"
+        />
+        <img
+          onMouseOver={changeImage}
+          src={otherImgs[1]}
+          alt={`An Image of ${model}`}
+          className="w-24 h-24 lg:w-28 lg:h-28 object-cover cursor-pointer"
+        />
+      </div>
+    </div>
   )
 }
 
