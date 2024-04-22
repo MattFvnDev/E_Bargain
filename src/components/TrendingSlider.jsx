@@ -1,9 +1,10 @@
 import React from "react"
 import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from "react-icons/bs"
-import { smartPhones } from "../constants"
 import { TrendingPhone } from "./"
+import { useSelector } from "react-redux"
 
 const TrendingSlider = () => {
+  const {smartPhones} = useSelector((state) => state.products)
   const trendingPhones = smartPhones.filter(
     (trendingPhone) => trendingPhone.id >= 7
   )
