@@ -47,7 +47,7 @@ const Cart = () => {
                 <dt className="flex items-center text-sm">
                   <span>Shipping estimate</span>
                 </dt>
-                {price <= 1000 ? (
+                {price <= 1200 ? (
                   <dd className="text-sm font-medium">
                     ${shippingEstimate}&nbsp;
                   </dd>
@@ -57,7 +57,7 @@ const Cart = () => {
               </div>
               <div className="flex items-center justify-between border-t border-gray-300 pt-4">
                 <dt className="text-base font-medium">Order total</dt>
-                {price <= 1000 ? (
+                {price <= 1200 ? (
                   <dd className="text-base font-medium">
                     ${price + shippingEstimate}&nbsp;
                   </dd>
