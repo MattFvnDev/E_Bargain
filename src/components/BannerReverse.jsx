@@ -13,7 +13,7 @@ const BannerReverse = ({ title, text, img }) => {
               className="h-full w-full object-cover rounded-tr-lg rounded-br-lg"
             />
           </div>
-          <div className="w-full px-8 justify-center flex flex-col text-start sm:w-1/2 bg-gray-300">
+          <div className="sm:w-1/2 w-full px-8 justify-center flex flex-col text-start bg-gray-300">
             <div className="w-full text-start justify-center flex flex-col">
               <h2 className="text-3xl font-semibold mb-8">{title}</h2>
               <p className="text-lg">{text}</p>

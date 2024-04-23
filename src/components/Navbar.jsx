@@ -17,7 +17,7 @@ const Navbar = () => {
         className="flex items-center text-gray-600 hover:text-red-800 group"
         to="products"
       >
-        <span className="hidden text-2xl font-bold md:inline-block">
+        <span className="hidden text-2xl font-bold md:inline-flex">
           Products
         </span>
         <BsBoxes className="w-7 h-7 flex-shrink-0 md:hidden group-hover:scale-110" />
