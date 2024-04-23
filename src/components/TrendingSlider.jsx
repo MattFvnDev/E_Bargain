@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 const TrendingSlider = () => {
   const { smartPhones } = useSelector((state) => state.products)
   const trendingPhones = smartPhones.filter(
-    (trendingPhone) => trendingPhone.id >= 7
+    (trendingPhone) => trendingPhone.rating >= 4
   )
 
   const slideBackward = () => {
