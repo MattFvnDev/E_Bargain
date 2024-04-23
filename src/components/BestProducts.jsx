@@ -9,7 +9,7 @@ const BestProducts = () => {
   )
   return (
     <div className="py-32 max-w-screen-xl mx-auto lg:max-w-screen-2xl">
-      <h2 className="text-2xl font-semibold mb-12 px-6 text-red-800 underline">
+      <h2 className="text-2xl font-semibold mb-8 px-6 text-red-800 underline">
         Our best products
       </h2>
       <div className="mx-auto max-w-screen-xl px-6 lg:max-w-screen-2xl">

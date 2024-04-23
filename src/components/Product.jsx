@@ -8,7 +8,7 @@ const Product = ({ filteredSmartPhone }) => {
   const { cart } = useSelector((state) => state.products)
   const dispatch = useDispatch()
   return (
-    <div className="border-2 hover:border-gray-500 duration-300 ease-in-out">
+    <div className="border-2 border-gray-300 hover:border-gray-500 duration-300 ease-in-out">
       <Link
         onClick={() => window.top(0.0)}
         to={`/products/phone/${filteredSmartPhone.id}`}
@@ -26,7 +26,7 @@ const Product = ({ filteredSmartPhone }) => {
           <p className="text-lg text-lime-600 font-semibold">
             {filteredSmartPhone.brand} {filteredSmartPhone.model}
           </p>
-          <p className="mt-1 text-xl font-semibold text-red-800">
+          <p className="mt-1 text-lg font-semibold text-red-800">
             ${filteredSmartPhone.price.toFixed(2)}
           </p>
         </div>

@@ -7,7 +7,7 @@ const TrendingPhone = ({ id, img, brand, model, price }) => {
       <Link
         to={`/products/phone/${id}`}
         onClick={() => window.top(0, 0)}
-        className="cursor-pointer border-2 hover:border-gray-500 duration-300 ease-in-out"
+        className="cursor-pointer border-2 border-gray-300 hover:border-gray-500 duration-300 ease-in-out"
       >
         <div className="w-64 pt-5 ">
           <img
