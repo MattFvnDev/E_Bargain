@@ -14,7 +14,7 @@ const PhoneDetails = () => {
   return (
     <div className="container lg:max-w-screen-lg mx-auto py-12 px-6">
       {phoneDetail.map((phone) => {
-        return <Details key={phone.id} {...phone} />
+        return <Details key={phone.id} phone={phone} />
       })}
     </div>
   )
