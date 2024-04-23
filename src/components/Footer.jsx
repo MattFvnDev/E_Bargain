@@ -11,7 +11,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
   return (
     <footer className="border-t border-gray-100 p-6 text-center container mx-auto">
-      <div className="flex flex-col-reverse items-center sm:justify-between justify-center ">
+      <div className="flex flex-col-reverse items-center sm:justify-between justify-center sm:flex-row ">
         <p className="text-sm font-medium text-gray-500 xl:text-lg">
           &copy; {currentYear} Bargain. All rights reserved.
         </p>
