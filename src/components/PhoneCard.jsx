@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { Rating } from "../components"
-import { addToCart } from "../features/cartSlice"
-import { useDispatch } from "react-redux"
+import { addToCart, removeFromCart } from "../features/cartSlice"
+import { useDispatch, useSelector } from "react-redux"
 
 const PhoneCard = ({
   id,
@@ -14,6 +14,7 @@ const PhoneCard = ({
   price,
   phone,
 }) => {
+  const { cart } = useSelector((state) => state.products)
   const dispatch = useDispatch()
   return (
     <div className="border-2 rounded-md group overflow-hidden hover:border-gray-500 duration-300 ease-in">
@@ -36,12 +37,21 @@ const PhoneCard = ({
             <p className="text-gray-600">Price</p>
             <p className="text-lg font-semibold">${price.toFixed(2)}</p>
           </div>
-          <button
-            onClick={() => dispatch(addToCart(phone))}
-            className="bg-lime-500 border mt-2 rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white"
-          >
-            Add To Cart
-          </button>
+          {cart.findIndex((item) => item.id === phone.id) < 0 ? (
+            <button
+              onClick={() => dispatch(addToCart(phone))}
+              className="bg-lime-500 border mt-2 rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white"
+            >
+              Add To Cart
+            </button>
+          ) : (
+            <button
+              onClick={() => dispatch(removeFromCart(phone.id))}
+              className="bg-lime-500 border mt-2 rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white w-[120px]"
+            >
+              Remove
+            </button>
+          )}
         </div>
       </div>
     </div>
