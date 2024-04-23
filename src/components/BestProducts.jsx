@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 const BestProducts = () => {
   const smartPhones = useSelector((state) => state.products.smartPhones)
   const filteredSmartPhones = smartPhones.filter(
-    (filteredSmartPhone) => filteredSmartPhone.price >= 999
+    (filteredSmartPhone) => filteredSmartPhone.price >= 998
   )
   return (
     <div className="py-32 max-w-screen-xl mx-auto lg:max-w-screen-2xl">
