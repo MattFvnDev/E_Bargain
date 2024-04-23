@@ -1,8 +1,12 @@
 import React from "react"
 import { FaRegCheckCircle } from "react-icons/fa"
 import { TechSpecs, SmallImages } from "../components"
+import { addToCart, removeFromCart } from "../features/cartSlice"
+import { useSelector, useDispatch } from "react-redux"
 
 const Details = ({ phone }) => {
+  const {cart} = useSelector((state) => state.products)
+  const dispatch = useDispatch()
   return (
     <div className="flex flex-col md:flex-row justify-between items-center space-y-48 md:space-y-0 md:space-x-4 lg:space-x-16">
       <SmallImages phone={phone} />
@@ -19,12 +23,23 @@ const Details = ({ phone }) => {
           <p className="text-gray-500">Price:</p>
           <p className="text-xl font-semibold">${phone.price.toFixed(2)}</p>
         </div>
-        <button
-          type="button"
-          className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white"
-        >
-          Add to cart
-        </button>
+        {cart.findIndex((item) => item.id === phone.id) < 0 ? (
+          <button
+            onClick={() => dispatch(addToCart(phone))}
+            type="button"
+            className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white"
+          >
+            Add to cart
+          </button>
+        ) : (
+          <button
+            onClick={() => dispatch(removeFromCart(phone.id))}
+            type="button"
+            className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white"
+          >
+            Remove <span className="hidden sm:inline-flex">from cart</span>
+          </button>
+        )}
       </div>
     </div>
   )
