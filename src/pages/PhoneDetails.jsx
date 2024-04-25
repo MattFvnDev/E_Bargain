@@ -6,7 +6,6 @@ import { useSelector } from "react-redux"
 
 const PhoneDetails = () => {
   const { smartPhones } = useSelector((state) => state.products)
-  console.log(smartPhones)
   const { id } = useParams()
   const phoneDetail = smartPhones.filter(
     (phoneDetail) => phoneDetail.id === parseInt(id)
