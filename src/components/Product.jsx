@@ -18,7 +18,9 @@ const Product = ({
   const dispatch = useDispatch()
   return (
     <div className="border-2 border-gray-300 hover:border-gray-500 duration-300 ease-in-out">
-      <Link onClick={() => window.top(0.0)} to={`/products/phone/${id}`}>
+      <Link 
+      to={`/products/phone/${id}`}
+      >
         <div className="p-4 w-full">
           <img
             src={otherImgs[0]}

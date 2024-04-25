@@ -18,7 +18,8 @@ const PhoneCard = ({
   const dispatch = useDispatch()
   return (
     <div className="border-2 rounded-md group overflow-hidden hover:border-gray-500 duration-300 ease-in">
-      <Link onClick={() => window.top(0.0)} to={`/products/phone/${id}`}>
+      <Link 
+      to={`/products/phone/${id}`}>
         <div className="relative w-full">
           <img
             src={img}

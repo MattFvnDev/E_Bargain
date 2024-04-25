@@ -19,6 +19,7 @@ import EmptyCart from "./EmptyCart"
 import CartItem from "./CartItem"
 import Details from "./Details"
 import Item from "./Item"
+import ScrollToTop from "./ScrollToTop"
 
 export {
   Header,
@@ -41,5 +42,6 @@ export {
   EmptyCart,
   CartItem,
   Details,
-  Item
+  Item,
+  ScrollToTop,
 }
