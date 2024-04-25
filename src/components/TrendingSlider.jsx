@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 const TrendingSlider = () => {
   const { smartPhones } = useSelector((state) => state.products)
   const trendingPhones = smartPhones.filter(
-    (trendingPhone) => trendingPhone.rating >= 4
+    (phone) => phone.rating >= 4
   )
 
   const slideBackward = () => {
@@ -29,8 +29,8 @@ const TrendingSlider = () => {
           className="flex gap-11 overflow-x-scroll overflow-y-hidden whitespace-nowrap scroll-smooth relative"
           id="slider"
         >
-          {trendingPhones.map((trendingPhone) => (
-            <TrendingPhone key={trendingPhone.id} {...trendingPhone} />
+          {trendingPhones.map((phone) => (
+            <TrendingPhone key={phone.id} {...phone} />
           ))}
         </div>
         <div className="flex gap-2 items-start xl:gap-4 mt-6 justify-end mr-2">
