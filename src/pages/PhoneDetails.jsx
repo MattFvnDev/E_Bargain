@@ -6,6 +6,7 @@ import { useSelector } from "react-redux"
 
 const PhoneDetails = () => {
   const { smartPhones } = useSelector((state) => state.products)
+  console.log(smartPhones)
   const { id } = useParams()
   const phoneDetail = smartPhones.filter(
     (phoneDetail) => phoneDetail.id === parseInt(id)
@@ -13,9 +14,9 @@ const PhoneDetails = () => {
  
   return (
     <div className="container lg:max-w-screen-lg mx-auto py-12 px-6">
-      {phoneDetail.map((phone) => {
-        return <Details key={phone.id} phone={phone} />
-      })}
+      {phoneDetail.map((phone) => (
+        <Details key={phone.id} {...phone} />
+      ))}
     </div>
   )
 }
