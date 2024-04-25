@@ -1,8 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, createSelector } from "@reduxjs/toolkit"
+
+const selectedPhones = (state) => state.products
+const cart = (state) => state.cart
+
+export const selectedPhonesCart = createSelector(
+  selectedPhones,
+  cart,
+  (phones, cart) => {
+    return phones.filter((phone) => cart.includes(phone.id))
+  }
+)
 
 const initialState = {
   cart: [],
-  shippingEstimate:25,
+  shippingEstimate: 25,
 }
 
 const cartSlice = createSlice({
