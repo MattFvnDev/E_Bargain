@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { cartTotal } from "../features/cartSlice"
 
 const Navbar = () => {
-  const { cart, quantity, price } = useSelector((state) => state.products)
+  const { cart, quantity, price } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(cartTotal())

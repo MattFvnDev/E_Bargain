@@ -3,8 +3,15 @@ import { Link } from "react-router-dom"
 import { HiOutlineTruck } from "react-icons/hi2"
 import { RxCross1 } from "react-icons/rx"
 import { FaMinus, FaPlus } from "react-icons/fa"
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../features/cartSlice"
+import { useDispatch } from "react-redux"
 
 const Item = ({ id, brand, model, price, img, memoryCapacity, quantity }) => {
+  const dispatch = useDispatch()
   return (
     <li className="flex py-6 sm:py-10">
       <div className="shrink-0">
@@ -35,6 +42,8 @@ const Item = ({ id, brand, model, price, img, memoryCapacity, quantity }) => {
               <p className="text-gray-500">Quantity:</p>
               <div className="mt-2 flex items-center space-x-2">
                 <button
+                  disabled={quantity <= 1}
+                  onClick={() => dispatch(decreaseQuantity(id))}
                   type="button"
                   className="p-1 rounded-md hover:bg-red-100 hover:text-red-500"
                 >
@@ -42,6 +51,7 @@ const Item = ({ id, brand, model, price, img, memoryCapacity, quantity }) => {
                 </button>
                 <p className="font-semibold text-xl">{quantity}</p>
                 <button
+                  onClick={() => dispatch(increaseQuantity(id))}
                   type="button"
                   className="p-1 rounded-md hover:bg-green-100 hover:text-green-500"
                 >
@@ -53,6 +63,7 @@ const Item = ({ id, brand, model, price, img, memoryCapacity, quantity }) => {
           <div className="mt-4 sm:mt-0 sm:pr-10">
             <div className="absolute right-1 top-0">
               <button
+                onClick={() => dispatch(removeFromCart(id))}
                 type="button"
                 className="items-center justify-center rounded-md font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background h-10 -mr-2 inline-flex p-2 hover:bg-gray-500 hover:text-white"
               >

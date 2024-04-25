@@ -1,8 +1,20 @@
 import React from "react"
 import { BsFillCartCheckFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
+import { addToCart } from "../features/cartSlice"
+import { useDispatch } from "react-redux"
 
-const Product = ({ model, brand, otherImgs, price, id }) => {
+const Product = ({
+  img,
+  model,
+  brand,
+  otherImgs,
+  price,
+  id,
+  memoryCapacity,
+  quantity,
+}) => {
+  const dispatch = useDispatch()
   return (
     <div className="border-2 border-gray-300 hover:border-gray-500 duration-300 ease-in-out">
       <Link onClick={() => window.top(0.0)} to={`/products/phone/${id}`}>
@@ -24,7 +36,23 @@ const Product = ({ model, brand, otherImgs, price, id }) => {
           </p>
         </div>
         <div className="flex gap-2 self-end">
-          <button className="text-yellow-500 hover:text-red-800 ">
+          <button
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  brand,
+                  model,
+                  price,
+                  img,
+                  quantity,
+                  memoryCapacity,
+                  id,
+                })
+              )
+            }
+            type="button"
+            className="text-yellow-500 hover:text-red-800 "
+          >
             <BsFillCartCheckFill className="w-8 h-8" />
           </button>
         </div>

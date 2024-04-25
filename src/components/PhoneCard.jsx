@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { Rating } from "../components"
+import { addToCart } from "../features/cartSlice"
+import { useDispatch } from "react-redux"
 
 const PhoneCard = ({
   id,
@@ -10,9 +12,10 @@ const PhoneCard = ({
   rating,
   ratingLeft,
   price,
+  memoryCapacity,
+  quantity,
 }) => {
-  
-
+  const dispatch = useDispatch()
   return (
     <div className="border-2 rounded-md group overflow-hidden hover:border-gray-500 duration-300 ease-in">
       <Link onClick={() => window.top(0.0)} to={`/products/phone/${id}`}>
@@ -35,7 +38,17 @@ const PhoneCard = ({
             <p className="text-lg font-semibold">${price.toFixed(2)}</p>
           </div>
 
-          <button className="bg-lime-500 border mt-2 rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white">
+          <button
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  brand, model, price, img, quantity, memoryCapacity, id 
+                })
+              )
+            }
+            type="button"
+            className="bg-lime-500 border mt-2 rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white"
+          >
             Add To Cart
           </button>
         </div>

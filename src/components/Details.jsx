@@ -1,8 +1,11 @@
 import React from "react"
 import { FaRegCheckCircle } from "react-icons/fa"
 import { TechSpecs, SmallImages } from "../components"
+import { addToCart, removeFromCart } from "../features/cartSlice"
+import { useSelector, useDispatch } from "react-redux"
 
 const Details = ({
+  id,
   model,
   brand,
   price,
@@ -15,7 +18,10 @@ const Details = ({
   cameraMain,
   cameraFront,
   operatingSystem,
+  quantity,
 }) => {
+  const { cart } = useSelector((state) => state.cart)
+  const dispatch = useDispatch()
   return (
     <div className="flex flex-col md:flex-row justify-between items-center space-y-48 md:space-y-0 md:space-x-4 lg:space-x-16">
       <SmallImages img={img} otherImgs={otherImgs} model={model} />
@@ -41,11 +47,36 @@ const Details = ({
           <p className="text-xl font-semibold">${price.toFixed(2)}</p>
         </div>
         <button
+          onClick={() =>
+            dispatch(
+              addToCart({
+                id,
+                model,
+                brand,
+                price,
+                img,
+                memoryCapacity,
+                quantity,
+              })
+            )
+          }
           type="button"
           className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white"
         >
           Add to cart
         </button>
+
+        {cart.findIndex((item) => item.id === id) < 0 ? (
+          <div className="mt-[60px]"></div>
+        ) : (
+          <button
+            onClick={() => dispatch(removeFromCart(id))}
+            type="button"
+            className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white"
+          >
+            Remove <span className="hidden sm:inline-flex">from cart</span>
+          </button>
+        )}
       </div>
     </div>
   )
