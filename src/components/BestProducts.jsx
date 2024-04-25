@@ -3,9 +3,9 @@ import { Product } from "./"
 import { useSelector } from "react-redux"
 
 const BestProducts = () => {
-  const smartPhones = useSelector((state) => state.products.smartPhones)
+  const {smartPhones} = useSelector((state) => state.products)
   const filteredSmartPhones = smartPhones.filter(
-    (filteredSmartPhone) => filteredSmartPhone.price >= 998
+    (phone) => phone.price >= 998
   )
   return (
     <div className="py-32 max-w-screen-xl mx-auto lg:max-w-screen-2xl">
@@ -14,10 +14,10 @@ const BestProducts = () => {
       </h2>
       <div className="mx-auto max-w-screen-xl px-6 lg:max-w-screen-2xl">
         <div className="grid gap-10 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-          {filteredSmartPhones.map((filteredSmartPhone) => (
+          {filteredSmartPhones.map((phone) => (
             <Product
-              key={filteredSmartPhone.id}
-              filteredSmartPhone={filteredSmartPhone}
+              key={phone.id}
+              {...phone}
             />
           ))}
         </div>
