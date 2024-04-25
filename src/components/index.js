@@ -18,6 +18,7 @@ import TrendingPhone from "./TrendingPhone"
 import EmptyCart from "./EmptyCart"
 import CartItem from "./CartItem"
 import Details from "./Details"
+import Item from "./Item"
 
 export {
   Header,
@@ -39,5 +40,6 @@ export {
   TrendingPhone,
   EmptyCart,
   CartItem,
-  Details
+  Details,
+  Item
 }

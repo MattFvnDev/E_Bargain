@@ -1,27 +1,15 @@
-import React, { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import React from "react"
+import { useSelector } from "react-redux"
 import { EmptyCart, CartItem } from "../components"
-import { clearCart, cartTotal } from "../features/cartSlice"
 
 const Cart = () => {
-  const { cart, price, shippingEstimate } = useSelector(
-    (state) => state.products
-  )
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(cartTotal())
-  }, [cart, price, shippingEstimate, dispatch])
-
+  const { cart } = useSelector((state) => state.cart)
   return (
     <div>
       <main className="mx-auto max-w-xl md:max-w-2xl px-6 pb-16 pt-16 lg:max-w-5xl xl:max-w-7xl lg:px-8">
         <h1 className="font-semibold text-4xl xl:text-3xl">Shopping Cart</h1>
         {cart.length > 0 ? (
-          <button
-            onClick={() => dispatch(clearCart(cart))}
-            type="button"
-            className="mt-1 shrink-0"
-          >
+          <button type="button" className="mt-1 shrink-0">
             <span className="italic text-2xl xl:text-xl hover:text-red-800">
               (Clear cart)
             </span>
@@ -41,29 +29,19 @@ const Cart = () => {
             <dl className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
                 <dt className="text-sm">Subtotal</dt>
-                <dd className="text-sm font-medium">${price}&nbsp;</dd>
+                <dd className="text-sm font-medium">$0.00&nbsp;</dd>
               </div>
               <div className="flex items-center justify-between border-t border-gray-300 pt-4">
                 <dt className="flex items-center text-sm">
                   <span>Shipping estimate</span>
                 </dt>
-                {price <= 1200 ? (
-                  <dd className="text-sm font-medium">
-                    ${shippingEstimate}&nbsp;
-                  </dd>
-                ) : (
-                  <dd className="text-sm font-medium">$0.00&nbsp;</dd>
-                )}
+
+                <dd className="text-sm font-medium">$0.00&nbsp;</dd>
               </div>
               <div className="flex items-center justify-between border-t border-gray-300 pt-4">
                 <dt className="text-base font-medium">Order total</dt>
-                {price <= 1200 ? (
-                  <dd className="text-base font-medium">
-                    ${price + shippingEstimate}&nbsp;
-                  </dd>
-                ) : (
-                  <dd className="text-base font-medium">${price}&nbsp;</dd>
-                )}
+
+                <dd className="text-base font-medium">$0.00&nbsp;</dd>
               </div>
             </dl>
             <div className="mt-6">
