@@ -18,9 +18,7 @@ const Product = ({
   const dispatch = useDispatch()
   return (
     <div className="border-2 border-gray-300 hover:border-gray-500 duration-300 ease-in-out">
-      <Link 
-      to={`/products/phone/${id}`}
-      >
+      <Link to={`/products/phone/${id}`}>
         <div className="p-4 w-full">
           <img
             src={otherImgs[0]}
@@ -44,13 +42,13 @@ const Product = ({
               onClick={() =>
                 dispatch(
                   addToCart({
+                    id,
                     brand,
                     model,
                     price,
                     img,
                     quantity,
                     memoryCapacity,
-                    id,
                   })
                 )
               }

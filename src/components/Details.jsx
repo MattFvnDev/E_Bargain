@@ -51,12 +51,12 @@ const Details = ({
             dispatch(
               addToCart({
                 id,
-                model,
                 brand,
+                model,
                 price,
                 img,
-                memoryCapacity,
                 quantity,
+                memoryCapacity,
               })
             )
           }
@@ -65,7 +65,6 @@ const Details = ({
         >
           Add to cart
         </button>
-
         {cart.findIndex((item) => item.id === id) < 0 ? (
           <div className="mt-[60px]"></div>
         ) : (

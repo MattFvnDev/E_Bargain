@@ -18,8 +18,7 @@ const PhoneCard = ({
   const dispatch = useDispatch()
   return (
     <div className="border-2 rounded-md group overflow-hidden hover:border-gray-500 duration-300 ease-in">
-      <Link 
-      to={`/products/phone/${id}`}>
+      <Link to={`/products/phone/${id}`}>
         <div className="relative w-full">
           <img
             src={img}
@@ -38,12 +37,17 @@ const PhoneCard = ({
             <p className="text-gray-600">Price</p>
             <p className="text-lg font-semibold">${price.toFixed(2)}</p>
           </div>
-
           <button
-            onClick={() =>
+            onClick={() => 
               dispatch(
                 addToCart({
-                  brand, model, price, img, quantity, memoryCapacity, id 
+                  id,
+                  brand,
+                  model,
+                  price,
+                  img,
+                  quantity,
+                  memoryCapacity,
                 })
               )
             }
