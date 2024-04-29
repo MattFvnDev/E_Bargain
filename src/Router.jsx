@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Cart, Home, Products, PhoneDetails } from "./pages"
-import { AppLayout } from "./components"
+import { AppLayout } from "./layouts"
 
 export function Router() {
   // Defining all routes

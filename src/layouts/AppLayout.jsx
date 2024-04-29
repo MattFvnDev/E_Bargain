@@ -1,8 +1,7 @@
 import React from "react"
 import { Outlet } from "react-router-dom"
-import { Header, Footer, Newsletter, ScrollToTop } from "./index"
+import { Header, Footer, Newsletter, ScrollToTop } from "../components"
 
-// Basic layout
 const AppLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
