@@ -14,7 +14,11 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row space-x-4 md:space-x-6">
       <NavLink
-        className="flex items-center text-gray-600 hover:text-red-800 group"
+        className={({ isActive }) =>
+          isActive
+            ? `flex items-center text-red-800 group`
+            : `flex items-center text-gray-600 hover:text-red-800`
+        }
         to="products"
       >
         <span className="hidden text-2xl font-bold md:inline-flex">
@@ -24,7 +28,11 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         to="cart"
-        className="flex items-center space-x-1 text-gray-600 hover:text-red-800"
+        className={({ isActive }) =>
+          isActive
+            ? `flex items-center space-x-1 text-red-800 group`
+            : `flex items-center space-x-1 text-gray-600 hover:text-red-800`
+        }
       >
         <div className="relative">
           <HiMiniShoppingCart className="w-7 h-7 flex-shrink-0" />
