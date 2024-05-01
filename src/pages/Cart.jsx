@@ -1,12 +1,13 @@
 import React, { useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { EmptyCart, CartItem } from "../components"
-import { useDispatch } from "react-redux"
 import { clearCart, cartTotal } from "../features/cartSlice"
+import { useNavigate } from "react-router-dom"
 
 const Cart = () => {
   const { cart, price, shippingEstimate } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   useEffect(() => {
     dispatch(cartTotal())
   }, [cart, price, shippingEstimate, dispatch])
@@ -66,6 +67,13 @@ const Cart = () => {
             </dl>
             <div className="mt-6">
               <button
+                onClick={() =>
+                  navigate("/checkout", {
+                    state: {cart},
+                    replace: true,
+                  })
+                }
+                type="button"
                 disabled={cart <= 0}
                 className="text-white inline-flex items-center justify-center rounded-md text-md font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 py-2 px-4 w-full bg-gray-700 hover:bg-red-800 ease-in-out duration-300 disabled:bg-gray-700/70"
               >

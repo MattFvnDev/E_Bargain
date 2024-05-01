@@ -19,6 +19,7 @@ import CartItem from "./CartItem"
 import Details from "./Details"
 import Item from "./Item"
 import ScrollToTop from "./ScrollToTop"
+import CheckoutItem from "./CheckoutItem"
 
 export {
   Header,
@@ -42,4 +43,5 @@ export {
   Details,
   Item,
   ScrollToTop,
+  CheckoutItem,
 }
