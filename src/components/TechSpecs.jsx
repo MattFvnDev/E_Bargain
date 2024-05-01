@@ -1,4 +1,3 @@
-import React from "react"
 import { FaMemory } from "react-icons/fa"
 import { FaMobileScreen, FaMicrochip } from "react-icons/fa6"
 import { MdStorage, MdCameraRear, MdCameraFront } from "react-icons/md"

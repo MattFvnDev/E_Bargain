@@ -1,4 +1,3 @@
-import React from "react"
 import { PhoneCard } from "../components"
 import { useSelector } from "react-redux"
 

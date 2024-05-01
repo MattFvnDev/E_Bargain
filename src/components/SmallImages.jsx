@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 const SmallImages = ({ img, otherImgs, model}) => {
   const [image, setImage] = useState(img)

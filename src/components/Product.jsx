@@ -1,4 +1,3 @@
-import React from "react"
 import { BsFillCartCheckFill, BsCartXFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { addToCart, removeFromCart } from "../features/cartSlice"

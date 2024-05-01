@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { NavLink } from "react-router-dom"
 import { HiMiniShoppingCart } from "react-icons/hi2"
 import { BsBoxes } from "react-icons/bs"

@@ -1,4 +1,3 @@
-import React from "react"
 import { Logo, Navbar } from "./"
 
 

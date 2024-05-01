@@ -1,4 +1,3 @@
-import React from "react"
 import { HiStar, HiOutlineStar } from "react-icons/hi2"
 
 const Rating = ({rating, ratingLeft}) => {

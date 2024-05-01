@@ -1,4 +1,3 @@
-import React from "react"
 import { Banner, Hero, BannerReverse, BestProducts, TrendingSlider } from "../components"
 import { Phone, Phone2 } from "../assets"
 

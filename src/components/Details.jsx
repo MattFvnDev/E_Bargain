@@ -1,4 +1,3 @@
-import React from "react"
 import { FaRegCheckCircle } from "react-icons/fa"
 import { TechSpecs, SmallImages } from "../components"
 import { addToCart, removeFromCart } from "../features/cartSlice"

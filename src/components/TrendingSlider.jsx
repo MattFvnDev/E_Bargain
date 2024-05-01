@@ -1,4 +1,3 @@
-import React from "react"
 import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from "react-icons/bs"
 import { TrendingPhone } from "./"
 import { useSelector } from "react-redux"
