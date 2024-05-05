@@ -46,30 +46,23 @@ const Cart = () => {
                 <dt className="flex items-center text-sm">
                   <span>Shipping estimate</span>
                 </dt>
-                {price <= 1200 ? (
-                  <dd className="text-sm font-medium">
-                    ${shippingEstimate}&nbsp;
-                  </dd>
-                ) : (
-                  <dd className="text-sm font-medium">$0.00&nbsp;</dd>
-                )}
+                <dd className="text-sm font-medium">
+                  ${price <= 1200 ? shippingEstimate : (0).toFixed(2)}&nbsp;
+                </dd>
               </div>
               <div className="flex items-center justify-between border-t border-gray-300 pt-4">
                 <dt className="text-base font-medium">Order total</dt>
-                {price <= 1200 ? (
-                  <dd className="text-base font-medium">
-                    ${price + shippingEstimate}&nbsp;
-                  </dd>
-                ) : (
-                  <dd className="text-base font-medium">${price}&nbsp;</dd>
-                )}
+                <dd className="text-base font-medium">
+                  ${cart <= 0 ? price : `${price + shippingEstimate}`}
+                  &nbsp;
+                </dd>
               </div>
             </dl>
             <div className="mt-6">
               <button
                 onClick={() =>
                   navigate("/checkout", {
-                    state: {cart},
+                    state: { cart },
                     replace: true,
                   })
                 }
