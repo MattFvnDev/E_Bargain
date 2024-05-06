@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom"
 import { CheckoutItem } from "../components"
 import { useSelector } from "react-redux"
+import { PiArrowFatLinesLeftFill } from "react-icons/pi"
 
 const Checkout = () => {
-  const {cart} = useSelector((state) => state.cart)
-  const calculateTotal = cart.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.price * currentValue.quantity
-  }, 0)
+  const { cart, shippingEstimate, price } = useSelector((state) => state.cart)
   return (
     <section className="container xl:max-w-screen-xl mx-auto p-6">
-      <Link to="/cart">Cart</Link>
+      <Link
+        to="/cart"
+        className="flex mb-1 font-medium text-gray-600 hover:text-red-800 group text-lg"
+      >
+        <PiArrowFatLinesLeftFill className="w-7 h-7 group-hover:-translate-x-1 transition-transform duration-500 ease-in-out" />
+        Cart
+      </Link>
       <h2 className="text-3xl md:text-4xl font-bold text-gray-600 mb-8 border-b-2">
         Checkout
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 xl:gap-20">
         <div className="mt-4">
-          <h3 className="text-3xl font-medium text-red-800 mb-4">
+          <h3 className="text-3xl font-medium text-red-800 mb-4 md:mb-6">
             Cart summary
           </h3>
           <ul className="divide-y divide-gray-300 border-y border-gray-300">
@@ -24,16 +28,29 @@ const Checkout = () => {
             ))}
           </ul>
           <div className="mt-4 flex justify-between items-center">
-            <h3 className="text-4xl md:text-3xl font-bold text-gray-600">
-              Total:{" "}
-            </h3>
-            <p className="text-3xl md:text-2xl font-bold text-yellow-500">
-              ${calculateTotal.toFixed(2)}
+            <h3 className="text-2xl font-medium text-gray-500">Subtotal:</h3>
+            <p className="text-2xl font-medium text-yellow-500">${price}</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <h3 className="text-2xl font-medium text-gray-500">Shipping: </h3>
+            <p className="text-2xl font-medium text-yellow-500">
+              ${cart <= 0 ? 0 : price <= 1200 ? shippingEstimate : 0}
+            </p>
+          </div>
+          <div className="mt-4 flex justify-between items-center border-b-2 border-gray-400 ">
+            <h3 className="text-3xl font-bold text-gray-600">Total: </h3>
+            <p className="text-3xl font-bold text-yellow-500">
+              $
+              {cart <= 0
+                ? 0
+                : price <= 1200
+                  ? `${(price + shippingEstimate).toFixed(2)}`
+                  : price.toFixed(2)}
             </p>
           </div>
         </div>
         <div className="mt-4">
-          <h3 className="text-3xl font-medium text-red-800 mb-4">
+          <h3 className="text-3xl font-medium text-red-800 mb-4 md:mb-6">
             Complete your order
           </h3>
           <form

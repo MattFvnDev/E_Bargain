@@ -14,7 +14,7 @@ const CheckoutItem = ({ img, brand, model, quantity, price }) => {
           <p>{model}</p>
           <p className="text-gray-500 font-normal">x{quantity}</p>
         </div>
-        <div className="self-center font-semibold text-lime-500 ">
+        <div className="self-center font-semibold text-lime-500">
           <p>${price.toFixed(2)}</p>
         </div>
       </div>
