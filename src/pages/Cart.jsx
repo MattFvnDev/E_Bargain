@@ -25,7 +25,9 @@ const Cart = () => {
               (Clear cart)
             </span>
           </button>
-        ) : null}
+        ) : (
+          ""
+        )}
         <form
           value=""
           action=""
@@ -47,13 +49,19 @@ const Cart = () => {
                   <span>Shipping estimate</span>
                 </dt>
                 <dd className="text-sm font-medium">
-                  ${price <= 1200 ? shippingEstimate : (0).toFixed(2)}&nbsp;
+                  ${cart <= 0 ? 0 : price <= 1200 ? shippingEstimate : 0}
+                  &nbsp;
                 </dd>
               </div>
               <div className="flex items-center justify-between border-t border-gray-300 pt-4">
                 <dt className="text-base font-medium">Order total</dt>
                 <dd className="text-base font-medium">
-                  ${cart <= 0 ? price : `${price + shippingEstimate}`}
+                  $
+                  {cart <= 0
+                    ? 0
+                    : price <= 1200
+                      ? `${price + shippingEstimate}`
+                      : price}
                   &nbsp;
                 </dd>
               </div>
@@ -62,7 +70,6 @@ const Cart = () => {
               <button
                 onClick={() =>
                   navigate("/checkout", {
-                    state: { cart },
                     replace: true,
                   })
                 }
