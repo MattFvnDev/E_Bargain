@@ -1,10 +1,47 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
+import { Link} from "react-router-dom"
 import { CheckoutItem } from "../components"
 import { useSelector } from "react-redux"
 import { PiArrowFatLinesLeftFill } from "react-icons/pi"
 
 const Checkout = () => {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [emailAddress, setEmailAddress] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [address, setAddress] = useState("")
+  const [country, setCountry] = useState("")
+  const [city, setCity] = useState("")
+  const [zipCode, setZipCode] = useState("")
+  const [cardholdersName, setCardholderName] = useState("")
+  const [cardNumber, setCardNumber] = useState("")
+  const [expirationDate, setExpirationDate] = useState("")
+  const [securityCode, setSecurityCode] = useState("")
+  const [consent, setConsent] = useState(false)
+
   const { cart, shippingEstimate, price } = useSelector((state) => state.cart)
+ 
+
+  const submitOrder = (e) => {
+    e.preventDefault()
+    const orderDetails = {
+      firstName,
+      lastName,
+      emailAddress,
+      phoneNumber,
+      address,
+      country,
+      city,
+      zipCode,
+      cardholdersName,
+      cardNumber,
+      expirationDate,
+      securityCode,
+      consent,
+    }
+    
+  }
+
   return (
     <section className="container xl:max-w-screen-xl mx-auto p-6">
       <Link
@@ -54,7 +91,7 @@ const Checkout = () => {
             Complete your order
           </h3>
           <form
-            action=""
+            onSubmit={submitOrder}
             className="border rounded-md shadow-sm p-6 border-gray-300 bg-white"
           >
             <div className="mb-8">
@@ -71,6 +108,8 @@ const Checkout = () => {
                     name="firstName"
                     className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                     autoComplete="no"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
                 <div className="relative flex items-center">
@@ -82,28 +121,35 @@ const Checkout = () => {
                     name="lastName"
                     className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                     autoComplete="no"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                   />
                 </div>
                 <div className="relative flex items-center">
                   <input
                     required
                     type="email"
-                    placeholder="Email"
-                    id="email"
-                    name="email"
+                    placeholder="Email Address"
+                    id="emailAddress"
+                    name="emailAddress"
                     className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                     autoComplete="no"
+                    value={emailAddress}
+                    onChange={(e) => setEmailAddress(e.target.value)}
                   />
                 </div>
                 <div className="relative flex items-center">
                   <input
                     required
-                    type="number"
+                    type="tel"
                     placeholder="Phone Number"
                     id="phoneNumber"
                     name="phoneNumber"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
                     className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                     autoComplete="no"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                 </div>
               </div>
@@ -121,6 +167,8 @@ const Checkout = () => {
                   name="address"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                   autoComplete="no"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
                 />
                 <input
                   required
@@ -130,6 +178,8 @@ const Checkout = () => {
                   name="country"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                   autoComplete="no"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
                 />
                 <input
                   required
@@ -139,6 +189,8 @@ const Checkout = () => {
                   name="city"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                   autoComplete="no"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
                 />
                 <input
                   required
@@ -148,6 +200,9 @@ const Checkout = () => {
                   name="zipCode"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
                   autoComplete="no"
+                  pattern="[0-9]{2}-[0-9]{3}"
+                  value={zipCode}
+                  onChange={(e) => setZipCode(e.target.value)}
                 />
               </div>
             </div>
@@ -162,31 +217,49 @@ const Checkout = () => {
                   placeholder="Cardholder's Name"
                   id="cardholdersName"
                   name="cardholdersName"
+                  autoComplete="no"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
+                  value={cardholdersName}
+                  onChange={(e) => setCardholderName(e.target.value)}
                 />
                 <input
                   required
-                  type="number"
+                  type="tel"
                   placeholder="Card Number"
                   id="cardNumber"
                   name="cardNumber"
+                  autoComplete="no"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
+                  pattern="[\d| ]{16,19}"
+                  maxLength="19"
+                  value={cardNumber}
+                  onChange={(e) => setCardNumber(e.target.value)}
                 />
                 <input
                   required
-                  type="number"
+                  type="tel"
                   id="expirationDate"
                   name="expirationDate"
                   placeholder="Expiration Date"
+                  pattern="\d\d/\d\d"
+                  autoComplete="no"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
+                  value={expirationDate}
+                  onChange={(e) => setExpirationDate(e.target.value)}
                 />
                 <input
                   required
-                  type="number"
+                  type="tel"
                   id="securityCode"
                   name="securityCode"
                   placeholder="CVV"
+                  autoComplete="no"
+                  minLength={3}
+                  maxLength={3}
+                  pattern="\d{3}"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
+                  value={securityCode}
+                  onChange={(e) => setSecurityCode(e.target.value)}
                 />
               </div>
             </div>
@@ -196,20 +269,22 @@ const Checkout = () => {
                 id="consent"
                 name="consent"
                 type="checkbox"
-                value="checked"
+                checked={consent}
+                autoComplete="no"
                 className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-1 md:mr-2 xl:mr-3"
+                onChange={(e) => setConsent(e.target.checked)}
               />
-              <label htmlFor="" className="text-gray-600">
+              <p className="text-gray-600">
                 By placing this order I accept{" "}
                 <em className="text-blue-600 font-semibold hover:underline cursor-pointer">
                   Terms and Conditions
                 </em>
                 .
-              </label>
+              </p>
             </div>
             <button
               className="bg-lime-500 hover:bg-lime-600 text-white text-xl font-bold p-2 rounded focus:outline-none focus:shadow-outline w-full"
-              type="button"
+              type="submit"
             >
               Place order
             </button>
