@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
 import { logo } from "../assets"
 
-const Logo = () => {
-  return (
+const Logo = () => (
     <Link className="flex items-center space-x-2" to="/">
       <img src={logo} alt="Logo" className="h-[42px] w-[42px] object-contain" />
       <span className="hidden text-3xl font-extrabold text-gray-600 sm:inline-block">
@@ -10,6 +9,6 @@ const Logo = () => {
       </span>
     </Link>
   )
-}
+
 
 export default Logo

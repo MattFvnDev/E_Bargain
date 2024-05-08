@@ -4,8 +4,7 @@ import { MdStorage, MdCameraRear, MdCameraFront } from "react-icons/md"
 
 const TechSpecs = ({
   memoryCapacity, display, ram, chip, cameraMain, cameraFront, operatingSystem
-}) => {
-  return (
+}) => (
     <div className="mt-4 border-t pt-4 flex flex-col space-y-2 lg:space-y-3">
       <p className="text-gray-500">Tech Specs:</p>
       <div className="flex flex-row items-center space-x-3">
@@ -38,6 +37,6 @@ const TechSpecs = ({
       </div>
     </div>
   )
-}
+
 
 export default TechSpecs

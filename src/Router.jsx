@@ -3,7 +3,6 @@ import { Cart, Checkout, Home, Products, PhoneDetails, Success } from "./pages"
 import { AppLayout } from "./layouts"
 
 export function Router() {
-  // Defining all routes
   const BrowserRoutes = () => (
     <BrowserRouter>
       <Routes>

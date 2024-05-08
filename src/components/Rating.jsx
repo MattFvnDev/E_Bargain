@@ -1,7 +1,6 @@
 import { HiStar, HiOutlineStar } from "react-icons/hi2"
 
-const Rating = ({rating, ratingLeft}) => {
-  return (
+const Rating = ({rating, ratingLeft}) => (
     <div className="flex items-center-ml-1">
       {Array.from({ length: rating }).map((_, index) => (
         <HiStar key={index} className="w-6 h-6 flex-shrink-0 text-yellow-400" />
@@ -14,6 +13,6 @@ const Rating = ({rating, ratingLeft}) => {
       ))}
     </div>
   )
-}
+
 
 export default Rating

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
-const TrendingPhone = ({ id, img, brand, model, price }) => {
-  return (
+const TrendingPhone = ({ id, img, brand, model, price }) => (
     <>
       <Link
         to={`/products/phone/${id}`}
@@ -25,6 +24,6 @@ const TrendingPhone = ({ id, img, brand, model, price }) => {
       </Link>
     </>
   )
-}
+
 
 export default TrendingPhone

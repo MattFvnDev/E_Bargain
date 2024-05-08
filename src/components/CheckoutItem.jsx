@@ -1,5 +1,4 @@
-const CheckoutItem = ({ img, brand, model, quantity, price }) => {
-  return (
+const CheckoutItem = ({ img, brand, model, quantity, price }) => (
     <li className="flex py-4">
       <div className="w-full flex items-center">
         <div className="shrink-0 h-16 w-16 mr-[2px] sm:mr-1">
@@ -20,6 +19,6 @@ const CheckoutItem = ({ img, brand, model, quantity, price }) => {
       </div>
     </li>
   )
-}
+
 
 export default CheckoutItem

@@ -3,8 +3,7 @@ import { FaPlus } from "react-icons/fa6"
 import { RxCrossCircled } from "react-icons/rx"
 
 
-const EmptyCart = () => {
-  return (
+const EmptyCart = () => (
       <div className="flex h-[450px] shrink-0 items-center justify-center rounded-lg border-2 border-dashed border-gray-300">
         <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
           <RxCrossCircled className="h-10 w-10 text-gray-500" />
@@ -22,6 +21,6 @@ const EmptyCart = () => {
         </div>
       </div>
   )
-}
+
 
 export default EmptyCart

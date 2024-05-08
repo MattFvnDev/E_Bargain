@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
 import { Xiaomi, Samsung, OnePlus, Apple } from "../assets"
 
-const Hero = () => {
-  return (
+const Hero = () => (
     <div className="max-w-screen-lg lg:max-w-screen-2xl mx-auto my-10 px-6">
       <div className="h-[500px] grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-3">
         <div className="cursor-pointer overflow-hidden relative md:row-span-2">
@@ -10,7 +9,7 @@ const Hero = () => {
             <div className="h-full absolute left-0 top-0 w-full"></div>
             <img
               src={Apple}
-              alt=""
+              alt="An Image of Apple iPhone 15 Pro Max"
               className="h-full object-cover w-full group-hover:scale-110 ease-in-out duration-300"
             />
           </Link>
@@ -20,7 +19,7 @@ const Hero = () => {
             <div className="h-full absolute left-0 top-0 w-full"></div>
             <img
               src={OnePlus}
-              alt=""
+              alt="An Image of OnePlus 12"
               className="h-full object-cover w-full object-[0,35%] group-hover:scale-110 ease-in-out duration-300"
             />
           </Link>
@@ -30,7 +29,7 @@ const Hero = () => {
             <div className="h-full absolute left-0 top-0 w-full"></div>
             <img
               src={Samsung}
-              alt=""
+              alt="An Image of Samsung Galaxy S24 Ultra"
               className="h-full object-cover w-full group-hover:scale-110 ease-in-out duration-300"
             />
           </Link>
@@ -40,7 +39,7 @@ const Hero = () => {
             <div className="h-full absolute left-0 top-0 w-full"></div>
             <img
               src={Xiaomi}
-              alt=""
+              alt="An Image of Xiaomi 13T Pro"
               className="h-full object-cover w-full lg:object-[10%,55%] group-hover:scale-110 ease-in-out duration-300"
             />
           </Link>
@@ -48,6 +47,6 @@ const Hero = () => {
       </div>
     </div>
   )
-}
+
 
 export default Hero

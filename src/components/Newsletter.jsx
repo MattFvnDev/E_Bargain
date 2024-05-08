@@ -1,6 +1,5 @@
 
-const Newsletter = () => {
-  return (
+const Newsletter = () => (
     <section className="items-center flex flex-col h-96 justify-center bg-gray-400">
       <div className="text-center">
         <h2 className="font-bold mb-8 text-white text-3xl sm:text-4xl">Newsletter</h2>
@@ -17,6 +16,5 @@ const Newsletter = () => {
       </div>
     </section>
   )
-}
 
 export default Newsletter

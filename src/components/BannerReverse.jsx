@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
-const BannerReverse = ({ title, text, img }) => {
-  return (
+const BannerReverse = ({ title, text, img }) => (
     <section className="pb-40">
       <div className="max-w-screen-lg lg:max-w-screen-2xl mx-auto px-6">
         <div className="flex h-[40rem] justify-between overflow-hidden">
@@ -16,7 +15,7 @@ const BannerReverse = ({ title, text, img }) => {
             <div className="w-full text-start justify-center flex flex-col">
               <h2 className="text-3xl font-semibold mb-8">{title}</h2>
               <p className="text-lg">{text}</p>
-              <Link onClick={() => window.scrollTo(0, 0)} to="products">
+              <Link to="products">
                 <button className="mt-8 cursor-pointer font-semibold uppercase border-lime-500 p-2 text-xl bg-lime-500 hover:scale-110 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white ease-in-out duration-300">
                   Shop now
                 </button>
@@ -27,6 +26,6 @@ const BannerReverse = ({ title, text, img }) => {
       </div>
     </section>
   )
-}
+
 
 export default BannerReverse
