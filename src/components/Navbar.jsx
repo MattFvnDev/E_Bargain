@@ -20,6 +20,7 @@ const Navbar = () => {
             : `flex items-center text-gray-600 hover:text-red-800`
         }
         to="products"
+        aria-label="To the Products page"
       >
         <span className="hidden text-2xl font-bold md:inline-flex">
           Products
@@ -28,6 +29,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         to="cart"
+        aria-label="To the Cart page"
         className={({ isActive }) =>
           isActive
             ? `flex items-center space-x-1 text-red-800 group`

@@ -19,6 +19,7 @@ const Footer = () => {
             to="https://https://pl.pinterest.com"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit the Pinterest website "
           >
             <FaPinterestSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-red-800 xl:h-[32px] xl:w-[32px] " />
           </Link>
@@ -26,6 +27,7 @@ const Footer = () => {
             to="https://www.instagram.com/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit the Instagram website "
           >
             <FaInstagramSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-red-800 xl:h-[32px] xl:w-[32px] " />
           </Link>
@@ -33,6 +35,7 @@ const Footer = () => {
             to="https://www.facebook.com/?locale=pl_PL"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit the Facebook website"
           >
             <FaFacebookSquare className="h-[28px] w-[28px] text-gray-600 hover:hover:text-red-800 xl:h-[32px] xl:w-[32px] " />
           </Link>

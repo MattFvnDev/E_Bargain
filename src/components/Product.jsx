@@ -52,6 +52,7 @@ const Product = ({
                 )
               }
               type="button"
+              aria-label="Add to cart icon"
               className="text-yellow-500 hover:text-red-800 "
             >
               <BsFillCartCheckFill className="w-8 h-8" />
@@ -59,7 +60,9 @@ const Product = ({
           ) : (
             <button
               onClick={() => dispatch(removeFromCart(id))}
+              type="button"
               className="text-gray-500 hover:text-red-800 "
+              aria-label="Remove from cart icon"
             >
               <BsCartXFill className="w-8 h-8" />
             </button>
