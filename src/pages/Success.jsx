@@ -3,8 +3,9 @@ import { Link, useLocation } from "react-router-dom"
 import { FaCircleCheck } from "react-icons/fa6"
 
 const Success = () => {
-  const location = useLocation()
-  const {firstName, emailAddress} = location.state.orderDetails
+  const {state} = useLocation()
+  const personalDetails = state.orderDetails
+  const {firstName, emailAddress} = personalDetails
 
   return (
     <section className="fixed inset-0 px-4 flex flex-wrap justify-center items-center w-full h-full z-50 before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.7)] overflow-auto">
