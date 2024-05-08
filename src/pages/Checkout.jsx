@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { CheckoutItem } from "../components"
 import { useSelector } from "react-redux"
 import { PiArrowFatLinesLeftFill } from "react-icons/pi"
@@ -18,9 +18,9 @@ const Checkout = () => {
   const [expirationDate, setExpirationDate] = useState("")
   const [securityCode, setSecurityCode] = useState("")
   const [consent, setConsent] = useState(false)
-
+  
   const { cart, shippingEstimate, price } = useSelector((state) => state.cart)
- 
+  const navigate = useNavigate()
 
   const submitOrder = (e) => {
     e.preventDefault()
@@ -39,7 +39,11 @@ const Checkout = () => {
       securityCode,
       consent,
     }
-    
+   
+    return navigate("/success", {
+      state: { cart, orderDetails },
+      replace: true,
+    })
   }
 
   return (
@@ -230,7 +234,7 @@ const Checkout = () => {
                   name="cardNumber"
                   autoComplete="no"
                   className="p-2 text-gray-600 w-full text-md border-b-2 focus:border-blue-600 outline-none"
-                  pattern="[\d| ]{16,19}"
+                  pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
                   maxLength="19"
                   value={cardNumber}
                   onChange={(e) => setCardNumber(e.target.value)}
@@ -283,7 +287,7 @@ const Checkout = () => {
               </p>
             </div>
             <button
-              className="bg-lime-500 hover:bg-lime-600 text-white text-xl font-bold p-2 rounded focus:outline-none focus:shadow-outline w-full"
+              className="bg-lime-500 hover:bg-lime-600 text-white text-xl font-bold p-2 rounded focus:outline-none focus:shadow-outline w-full ease-in-out duration-300 disabled:bg-gray-700/70"
               type="submit"
             >
               Place order
