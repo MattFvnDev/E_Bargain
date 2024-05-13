@@ -18,11 +18,11 @@ const Product = ({
   return (
     <div className="border-2 border-gray-300 hover:border-gray-500 duration-300 ease-in-out">
       <Link to={`/products/phone/${id}`}>
-        <div className="p-4 w-full">
+        <div className="p-4 relative">
           <img
             src={otherImgs[0]}
             alt={`An Image of ${brand} ${model}`}
-            className="object-contain"
+            className="object-contain w-full h-full"
           />
         </div>
       </Link>

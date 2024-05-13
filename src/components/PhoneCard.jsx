@@ -18,11 +18,11 @@ const PhoneCard = ({
   return (
     <div className="border-2 rounded-md group overflow-hidden hover:border-gray-500 duration-300 ease-in">
       <Link to={`/products/phone/${id}`}>
-        <div className="relative w-full">
+        <div className="relative">
           <img
             src={img}
             alt={`An Image of ${model}`}
-            className="object-contain py-6"
+            className="object-contain w-full h-full py-6"
           />
         </div>
       </Link>

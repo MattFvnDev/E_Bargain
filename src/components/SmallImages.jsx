@@ -12,7 +12,7 @@ const SmallImages = ({ img, otherImgs, model}) => {
         alt={`An Image of ${model}`}
         className="w-90 h-90"
       />
-      <div className="w-full flex justify-center items-center mt-16 lg:mt-20">
+      <div className="flex justify-center items-center mt-16 lg:mt-20">
         <img
           onMouseOver={changeImage}
           src={img}
