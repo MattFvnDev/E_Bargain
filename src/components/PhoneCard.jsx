@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
-import { Rating } from "../components"
+import { Rating, AddToCartToast } from "../components"
 import { addToCart } from "../features/cartSlice"
 import { useDispatch } from "react-redux"
+import toast from "react-hot-toast"
 
 const PhoneCard = ({
   id,
@@ -14,6 +15,9 @@ const PhoneCard = ({
   memoryCapacity,
   quantity,
 }) => {
+  const addToast = () =>
+    toast.custom(<AddToCartToast brand={brand} model={model} img={img} />)
+
   const dispatch = useDispatch()
   return (
     <div className="border-2 rounded-md group overflow-hidden hover:border-gray-500 duration-300 ease-in">
@@ -37,7 +41,7 @@ const PhoneCard = ({
             <p className="text-lg font-semibold">${price.toFixed(2)}</p>
           </div>
           <button
-            onClick={() => 
+            onClick={() => {
               dispatch(
                 addToCart({
                   id,
@@ -49,7 +53,8 @@ const PhoneCard = ({
                   memoryCapacity,
                 })
               )
-            }
+              addToast()
+            }}
             type="button"
             className="bg-lime-500 border mt-2 rounded-lg py-1 px-4 font-semibold hover:bg-lime-600 duration-300 ease-in-out text-white"
           >

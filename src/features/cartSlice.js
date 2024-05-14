@@ -1,4 +1,5 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit"
+import toast from "react-hot-toast"
 
 const selectedPhones = (state) => state.products
 const cart = (state) => state.cart
@@ -52,6 +53,7 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       state.cart = []
+      toast.success("Cart has been cleared")
     },
     cartTotal: (state) => {
       let { quantity, price } = state.cart.reduce(

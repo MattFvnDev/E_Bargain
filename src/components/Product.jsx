@@ -2,6 +2,8 @@ import { BsFillCartCheckFill, BsCartXFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { addToCart, removeFromCart } from "../features/cartSlice"
 import { useDispatch, useSelector } from "react-redux"
+import toast from "react-hot-toast"
+import { AddToCartToast, RemoveFromCartToast } from "../components"
 
 const Product = ({
   img,
@@ -15,6 +17,11 @@ const Product = ({
 }) => {
   const { cart } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
+  const addToast = () =>
+    toast.custom(<AddToCartToast brand={brand} model={model} img={img} />)
+  const removeToast = () =>
+    toast.custom(<RemoveFromCartToast brand={brand} model={model} img={img} />)
+
   return (
     <div className="border-2 border-gray-300 hover:border-gray-500 duration-300 ease-in-out">
       <Link to={`/products/phone/${id}`}>
@@ -38,7 +45,7 @@ const Product = ({
         <div className="flex gap-2 self-end">
           {cart.findIndex((item) => item.id === id) < 0 ? (
             <button
-              onClick={() =>
+              onClick={() => {
                 dispatch(
                   addToCart({
                     id,
@@ -50,7 +57,8 @@ const Product = ({
                     memoryCapacity,
                   })
                 )
-              }
+                addToast()
+              }}
               type="button"
               aria-label="Add to cart icon"
               className="text-yellow-500 hover:text-red-800 "
@@ -59,7 +67,10 @@ const Product = ({
             </button>
           ) : (
             <button
-              onClick={() => dispatch(removeFromCart(id))}
+              onClick={() => {
+                dispatch(removeFromCart(id))
+                removeToast()
+              }}
               type="button"
               className="text-gray-500 hover:text-red-800 "
               aria-label="Remove from cart icon"

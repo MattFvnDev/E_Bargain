@@ -8,9 +8,14 @@ import {
   removeFromCart,
 } from "../features/cartSlice"
 import { useDispatch } from "react-redux"
+import { RemoveFromCartToast } from "../components"
+import toast from "react-hot-toast"
 
 const Item = ({ id, brand, model, price, img, memoryCapacity, quantity }) => {
   const dispatch = useDispatch()
+  const removeToast = () =>
+    toast.custom(<RemoveFromCartToast brand={brand} model={model} img={img} />)
+
   return (
     <li className="flex py-6 sm:py-10">
       <div className="shrink-0">
@@ -62,7 +67,10 @@ const Item = ({ id, brand, model, price, img, memoryCapacity, quantity }) => {
           <div className="mt-4 sm:mt-0 sm:pr-10">
             <div className="absolute right-1 top-0">
               <button
-                onClick={() => dispatch(removeFromCart(id))}
+                onClick={() => {
+                  dispatch(removeFromCart(id))
+                  removeToast()
+                }}
                 type="button"
                 className="items-center justify-center rounded-md font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background h-10 -mr-2 inline-flex p-2 hover:bg-gray-500 hover:text-white"
               >

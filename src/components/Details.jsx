@@ -1,7 +1,13 @@
 import { FaRegCheckCircle } from "react-icons/fa"
-import { TechSpecs, SmallImages } from "../components"
+import {
+  TechSpecs,
+  SmallImages,
+  AddToCartToast,
+  RemoveFromCartToast,
+} from "../components"
 import { addToCart, removeFromCart } from "../features/cartSlice"
 import { useSelector, useDispatch } from "react-redux"
+import toast from "react-hot-toast"
 
 const Details = ({
   id,
@@ -21,6 +27,10 @@ const Details = ({
 }) => {
   const { cart } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
+  const addToast = () =>
+    toast.custom(<AddToCartToast brand={brand} model={model} img={img} />)
+  const removeToast = () =>
+    toast.custom(<RemoveFromCartToast brand={brand} model={model} img={img} />)
   return (
     <div className="flex flex-col md:flex-row justify-between items-center space-y-48 md:space-y-0 md:space-x-4 lg:space-x-16">
       <SmallImages img={img} otherImgs={otherImgs} model={model} />
@@ -46,7 +56,7 @@ const Details = ({
           <p className="text-xl font-semibold">${price.toFixed(2)}</p>
         </div>
         <button
-          onClick={() =>
+          onClick={() => {
             dispatch(
               addToCart({
                 id,
@@ -58,7 +68,8 @@ const Details = ({
                 memoryCapacity,
               })
             )
-          }
+            addToast()
+          }}
           type="button"
           className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white"
         >
@@ -68,7 +79,10 @@ const Details = ({
           <div className="mt-[60px]"></div>
         ) : (
           <button
-            onClick={() => dispatch(removeFromCart(id))}
+            onClick={() => {
+              dispatch(removeFromCart(id))
+              removeToast()
+            }}
             type="button"
             className="w-full font-semibold uppercase mt-4 boder border-lime-500 py-2 px-6 text-lg bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white"
           >

@@ -20,6 +20,8 @@ import Details from "./Details"
 import Item from "./Item"
 import ScrollToTop from "./ScrollToTop"
 import CheckoutItem from "./CheckoutItem"
+import AddToCartToast from "./AddToCartToast"
+import RemoveFromCartToast from "./RemoveFromCartToast"
 
 export {
   Header,
@@ -44,4 +46,6 @@ export {
   Item,
   ScrollToTop,
   CheckoutItem,
+  AddToCartToast,
+  RemoveFromCartToast
 }
