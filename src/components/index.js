@@ -22,6 +22,7 @@ import ScrollToTop from "./ScrollToTop"
 import CheckoutItem from "./CheckoutItem"
 import AddToCartToast from "./AddToCartToast"
 import RemoveFromCartToast from "./RemoveFromCartToast"
+import ClearCartToast from "./ClearCartToast"
 
 export {
   Header,
@@ -47,5 +48,6 @@ export {
   ScrollToTop,
   CheckoutItem,
   AddToCartToast,
-  RemoveFromCartToast
+  RemoveFromCartToast,
+  ClearCartToast
 }

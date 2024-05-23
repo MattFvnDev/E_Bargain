@@ -1,11 +1,13 @@
 import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { EmptyCart, CartItem } from "../components"
+import { EmptyCart, CartItem, ClearCartToast } from "../components"
 import { clearCart, cartTotal } from "../features/cartSlice"
 import { useNavigate } from "react-router-dom"
+import toast from "react-hot-toast"
 
 const Cart = () => {
   const { cart, price, shippingEstimate } = useSelector((state) => state.cart)
+  const clearToast = () => toast.custom(<ClearCartToast />)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   useEffect(() => {
@@ -17,7 +19,10 @@ const Cart = () => {
         <h1 className="font-semibold text-4xl xl:text-3xl">Shopping Cart</h1>
         {cart.length > 0 ? (
           <button
-            onClick={() => dispatch(clearCart())}
+            onClick={() => {
+              dispatch(clearCart())
+              clearToast()
+            }}
             type="button"
             className="mt-1 shrink-0"
           >
